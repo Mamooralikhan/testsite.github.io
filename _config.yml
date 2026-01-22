@@ -1,0 +1,11 @@
+title: "Saad Gulzar"
+email: "sgulzar@nd.edu"
+description: "Associate Professor of Political Science and Economics at the University of Notre Dame"
+baseurl: ""
+url: "https://testsite.github.io"
+twitter_username: "saadgulzar"
+github_username: "saadgulzar"
+
+# Build settings
+markdown: kramdown
+theme: minima

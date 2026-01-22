@@ -1,0 +1,63 @@
+/* GLOBAL STYLES */
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    min-height: 100vh;
+    color: #333;
+    line-height: 1.6;
+}
+
+a { color: #00457c; text-decoration: none; } /* Notre Dame Blue */
+a:hover { text-decoration: underline; }
+
+/* LEFT SIDEBAR */
+.sidebar {
+    width: 260px;
+    background-color: #f9f9f9; /* Light grey background */
+    padding: 40px;
+    position: fixed;
+    height: 100%;
+    border-right: 1px solid #eee;
+    overflow-y: auto;
+}
+
+.profile-photo {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 3px solid #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.sidebar h2 { font-size: 1.4em; margin-bottom: 5px; }
+.sidebar p { font-size: 0.9em; color: #666; margin-top: 0; }
+
+.nav-links { list-style: none; padding: 0; margin-top: 30px; }
+.nav-links li { margin-bottom: 12px; }
+.nav-links a { 
+    font-weight: 500; 
+    color: #444; 
+    font-size: 1.05em; 
+    display: block;
+}
+.nav-links a:hover { color: #00457c; }
+
+/* RIGHT CONTENT */
+.content {
+    margin-left: 340px; /* Pushes content right */
+    padding: 60px 80px;
+    max-width: 800px;
+}
+
+h1 { font-size: 2em; margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+h3 { margin-top: 30px; font-weight: 600; }
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+    body { flex-direction: column; }
+    .sidebar { width: 100%; position: relative; height: auto; padding: 20px; box-sizing: border-box;}
+    .content { margin-left: 0; padding: 20px; }
+}
