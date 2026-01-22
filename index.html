@@ -15,42 +15,26 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
-      body { 
-          font-family: 'Lato', sans-serif !important; 
-          color: #333; 
-          background-color: #fdfdfd; /* Very subtle off-white for reduced eye strain */
-          line-height: 1.6;
-      }
+      body { font-family: 'Lato', sans-serif !important; color: #333; background-color: #fdfdfd; line-height: 1.6; }
       
-      /* Typography - The "Ivy League" Look */
-      h1, h2, h3, h4, h5, .nav-item { font-family: 'Playfair Display', serif !important; }
-      
+      /* TYPOGRAPHY */
+      h1, h2, h3, h4, h5 { font-family: 'Playfair Display', serif !important; }
       h1 { font-size: 26pt; font-weight: 700; margin-bottom: 5px; color: #111; letter-spacing: -0.5px; }
       
-      /* Gold accent for section headers */
-      h3 { 
-          font-size: 1.6em; 
-          font-weight: 700; 
-          color: #002b5c; /* Notre Dame Navy */
-          border-bottom: 2px solid #c99700; /* Notre Dame Gold */
-          padding-bottom: 10px; 
-          margin-bottom: 25px; 
-          margin-top: 20px;
-      }
-      
-      h4 { 
-          font-size: 1.2em; 
-          font-weight: 600; 
-          color: #555; 
-          margin-top: 40px; 
-          margin-bottom: 20px; 
-          text-transform: uppercase; 
-          letter-spacing: 1px; 
+      /* Theme Headers */
+      .theme-header {
+          font-size: 1.8em;
+          font-weight: 700;
+          color: #002b5c;
+          border-bottom: 2px solid #c99700;
+          padding-bottom: 10px;
+          margin-top: 50px;
+          margin-bottom: 20px;
       }
 
-      /* Links */
+      /* LINKS */
       a { color: #00457c; text-decoration: none; transition: color 0.2s; }
-      a:hover { color: #c99700; text-decoration: none; }
+      a:hover { color: #c99700; }
       
       /* BANNER & BOX */
       .banner-section {
@@ -63,118 +47,102 @@
       }
 
       .profile-box {
-        background-color: rgba(255, 255, 255, 0.92); /* High quality transparency */
-        backdrop-filter: blur(8px);
+        background-color: rgba(255, 255, 255, 0.90);
+        backdrop-filter: blur(5px);
         padding: 40px;
-        border-radius: 2px; /* Sharper corners for a more formal look */
+        border-radius: 2px;
         box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         max-width: 1100px;
         margin: 0 auto;
-        border-top: 4px solid #002b5c; /* Navy accent on top */
+        border-top: 4px solid #002b5c;
       }
 
-      .profile-img { 
-          border-radius: 2px; 
-          width: 100%;
-          max-width: 220px;
-          height: auto;
-          object-fit: cover;
-          box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      }
-
-      .icon-row { font-size: 1em; color: #666; margin-top: 20px; font-family: 'Lato', sans-serif; }
+      .profile-img { border-radius: 2px; width: 100%; max-width: 220px; height: auto; object-fit: cover; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+      .icon-row { font-size: 1em; color: #666; margin-top: 20px; }
       .icon-row a { margin-right: 18px; color: #00457c; font-weight: 600; }
       
       .blurb-text {
           font-size: 1.15em;
           line-height: 1.7;
           color: #444;
-          font-family: 'Playfair Display', serif; /* Blurb in Serif looks very elegant */
+          font-family: 'Playfair Display', serif;
           font-style: italic;
       }
-      @media (min-width: 768px) { 
-          .blurb-text { 
-              padding-left: 30px; 
-              border-left: 1px solid #ddd; 
-          } 
-      }
+      @media (min-width: 768px) { .blurb-text { padding-left: 30px; border-left: 1px solid #ddd; } }
 
       /* TABS */
       .nav-tabs { border-bottom: 1px solid #ddd; margin-bottom: 40px; }
-      .nav-link { 
-          color: #888; 
-          font-size: 1.2em; 
-          border: none; 
-          padding-bottom: 12px; 
-          margin-right: 30px; 
-          background: none;
-      }
-      .nav-link.active { 
-          color: #002b5c !important; 
-          font-weight: 700; 
-          border-bottom: 3px solid #c99700; 
-          background: none; 
-      }
-      .nav-link:hover { color: #002b5c; }
+      .nav-link { color: #888; font-size: 1.2em; border: none; padding-bottom: 12px; margin-right: 30px; background: none; }
+      .nav-link.active { color: #002b5c !important; font-weight: 700; border-bottom: 3px solid #c99700; background: none; }
       
-      /* PAPER LIST STYLING */
+      /* FILTER BUTTONS (Mini Pills) */
+      .filter-bar { margin-bottom: 25px; }
+      .filter-btn {
+          border: 1px solid #eee;
+          background: #fff;
+          color: #666;
+          padding: 4px 12px;
+          border-radius: 15px;
+          font-size: 0.85em;
+          margin-right: 6px;
+          transition: all 0.2s;
+          cursor: pointer;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+      }
+      .filter-btn:hover { background: #f0f0f0; }
+      .filter-btn.active { background-color: #002b5c; color: #fff; border-color: #002b5c; }
+
+      /* PAPER ITEM STYLING (The requested format) */
       .paper-item { margin-bottom: 30px; }
       
       .paper-title { 
-          font-family: 'Playfair Display', serif;
-          font-size: 1.15em; 
-          font-weight: 600;
-          line-height: 1.3; 
-          display: inline; 
+          font-family: 'Lato', sans-serif; /* "Simple" */
+          font-size: 1.1em; 
           color: #222; 
+          display: block;
+          line-height: 1.4;
       }
       
-      .paper-journal { font-style: italic; color: #00457c; }
-      .paper-authors { font-size: 0.95em; color: #666; display: block; margin-top: 4px; }
+      .paper-journal { 
+          font-family: 'Playfair Display', serif;
+          font-weight: 700; /* Bold */
+          font-size: 0.95em; /* Smaller than title */
+          color: #002b5c;
+          margin-top: 2px;
+      }
       
-      /* The Expand Button */
-      .expand-btn {
-          color: #c99700; /* Gold arrow */
+      .paper-authors { 
+          font-size: 0.95em; 
+          color: #666; /* Not bold */
+          margin-top: 2px;
+      }
+      
+      /* Expand Button */
+      .expand-trigger {
+          display: inline-block;
+          margin-top: 5px;
+          font-size: 0.85em;
+          color: #c99700;
           cursor: pointer;
-          font-size: 1em;
-          margin-left: 8px;
-          vertical-align: middle;
+          font-weight: 600;
+          text-transform: uppercase;
       }
-      .expand-btn:hover { color: #002b5c; }
-
-      /* The Hidden Box (Abstract + Cite) */
+      .expand-trigger:hover { text-decoration: underline; }
+      
+      /* Hidden Box */
       .abstract-box {
-          margin-top: 12px;
-          background: #f4f6f8;
-          padding: 20px;
-          border-radius: 2px;
-          font-size: 0.95em;
-          color: #444;
+          margin-top: 10px;
+          background: #f9f9f9;
+          padding: 15px;
           border-left: 3px solid #002b5c;
+          font-size: 0.9em;
       }
-      
-      .citation-text {
-          margin-top: 15px;
-          padding-top: 15px;
-          border-top: 1px solid #ddd;
-          font-family: 'Courier New', monospace;
-          font-size: 0.85em;
-          color: #555;
+      .btn-download {
+          background-color: #fff; border: 1px solid #ccc; padding: 3px 8px; 
+          font-size: 0.8em; border-radius: 3px; margin-right: 10px; color: #333;
       }
-      
-      .resource-links { margin-bottom: 15px; }
-      .btn-sm-custom {
-          background-color: white;
-          border: 1px solid #ccc;
-          color: #333;
-          padding: 4px 10px;
-          font-size: 0.85em;
-          border-radius: 2px;
-          margin-right: 5px;
-          text-decoration: none;
-          transition: all 0.2s;
-      }
-      .btn-sm-custom:hover { background-color: #002b5c; color: white; }
+      .btn-download:hover { background: #002b5c; color: white; }
 
     </style>
   </head>
@@ -183,25 +151,15 @@
 
     <div class="banner-section">
       <div class="container">
-        
         <div class="profile-box">
             <div class="row align-items-center">
-                
                 <div class="col-md-3 text-center">
                     <img src="img/profile.jpg" class="profile-img" alt="Saad Gulzar">
                 </div>
-
                 <div class="col-md-5">
                     <h1>Saad Gulzar</h1>
-                    <h5 style="font-weight: 400; margin-bottom: 15px; color: #333;">
-                        Associate Professor of Political Science & Economics<br>
-                        University of Notre Dame
-                    </h5>
-                    
-                    <p style="font-size: 0.9em; margin-bottom: 5px; color: #555; font-family: 'Lato', sans-serif;">
-                        <strong>Research Manager:</strong> Latin America & South Asia Chapter
-                    </p>
-
+                    <h5 style="font-weight: 400; margin-bottom: 15px; color: #333;">Associate Professor of Political Science & Economics<br>University of Notre Dame</h5>
+                    <p style="font-size: 0.9em; margin-bottom: 5px; color: #555;"><strong>Research Manager:</strong> Latin America & South Asia Chapter</p>
                     <div class="icon-row">
                         <a href="papers/cv.pdf"><i class="ai ai-cv ai-lg"></i> CV</a>
                         <a href="https://github.com/saadgulzar"><i class="fa-brands fa-github"></i> GitHub</a>
@@ -209,564 +167,302 @@
                         <a href="mailto:sgulzar@nd.edu"><i class="fa-solid fa-envelope"></i> Email</a>
                     </div>
                 </div>
-
-                <div class="col-md-4 blurb-text">
-                    <p>
-                        "My research interests lie in political economy, comparative politics, development, and environmental governance, with a regional focus on South Asia."
-                    </p>
+                <div class="col-md-4 ps-md-4 blurb-text">
+                    <p>"My research interests lie in political economy, comparative politics, development, and environmental governance, with a regional focus on South Asia."</p>
                 </div>
-
             </div>
         </div>
-
       </div>
     </div>
 
     <div class="container">
       <div class="row justify-content-center">
-        <div class="col-lg-12">
+        <div class="col-lg-10">
           
           <ul class="nav nav-tabs justify-content-center" id="mainNav" role="tablist">
-            <li class="nav-item">
-              <a class="nav-link active" id="research-tab" data-bs-toggle="tab" href="#research" role="tab">Research</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" id="expert-tab" data-bs-toggle="tab" href="#expert" role="tab">Expert Work</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" id="teaching-tab" data-bs-toggle="tab" href="#teaching" role="tab">Teaching</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" id="podcasts-tab" data-bs-toggle="tab" href="#podcasts" role="tab">Podcasts</a>
-            </li>
+            <li class="nav-item"><a class="nav-link active" id="research-tab" data-bs-toggle="tab" href="#research" role="tab">Research</a></li>
+            <li class="nav-item"><a class="nav-link" id="expert-tab" data-bs-toggle="tab" href="#expert" role="tab">Expert Work</a></li>
+            <li class="nav-item"><a class="nav-link" id="teaching-tab" data-bs-toggle="tab" href="#teaching" role="tab">Teaching</a></li>
+            <li class="nav-item"><a class="nav-link" id="podcasts-tab" data-bs-toggle="tab" href="#podcasts" role="tab">Podcasts</a></li>
           </ul>
 
           <div class="tab-content" id="nav-tabContent">
             
             <div class="tab-pane fade show active" id="research" role="tabpanel">
-              <div class="row">
-                  
-                  <div class="col-lg-6 pe-lg-5">
-                      <h3>Political Economy of Development</h3>
-                      
-                      <h4>Publications</h4>
-                      
-                      <div class="paper-item">
-                          <div class="paper-title">Political Responsiveness, Information Provision, and Capacity Gaps (Forthcoming)</div>
-                          <a class="expand-btn" data-bs-toggle="collapse" data-bs-target="#p19"><i class="far fa-arrow-alt-circle-down"></i></a>
-                          <br><span class="paper-journal">Comparative Political Studies</span>
-                          <span class="paper-authors">With Miriam Golden and Luke Sonnet.</span>
-                          
-                          <div class="collapse abstract-box" id="p19">
-                              <div class="resource-links">
-                                  <a href="#" class="btn-sm-custom"><i class="far fa-file-pdf"></i> PDF</a>
-                              </div>
-                              <p><strong>Abstract:</strong> We investigate whether lack of information is one reason politicians may be unresponsive to voter preferences. Using a randomized control trial with senior politicians in Pakistan, we find that even eager and informed politicians may be unable to respond due to institutional capacity constraints.</p>
-                              <div class="citation-text">Golden, M., Gulzar, S., & Sonnet, L. (Forthcoming). Political Responsiveness, Information Provision, and Capacity Gaps. <em>Comparative Political Studies</em>.</div>
-                          </div>
-                      </div>
-
-                      <div class="paper-item">
-                          <div class="paper-title">Can Party Elites Shape the Rank-and-File? Evidence from a Recruitment Experiment in India (2025)</div>
-                          <a class="expand-btn" data-bs-toggle="collapse" data-bs-target="#p17"><i class="far fa-arrow-alt-circle-down"></i></a>
-                          <br><span class="paper-journal">American Political Science Review</span>
-                          <span class="paper-authors">With Durgesh Pathak, Sarah Thompson, and Aliz Toth.</span>
-                          
-                          <div class="collapse abstract-box" id="p17">
-                              <div class="resource-links">
-                                  <a href="#" class="btn-sm-custom"><i class="far fa-file-pdf"></i> PDF</a>
-                              </div>
-                              <p><strong>Abstract:</strong> We analyze a field experiment conducted by an Indian party that randomized recruitment messages. Contrary to concerns that parties can only attract a few poor-quality volunteers, we show that elite efforts can shape the rank-and-file.</p>
-                              <div class="citation-text">Gulzar, S., Pathak, D., Thompson, S., & Toth, A. (2025). Can Party Elites Shape the Rank-and-File? <em>American Political Science Review</em>.</div>
-                          </div>
-                      </div>
-
-                      <div class="paper-item">
-                          <div class="paper-title">Personalities and Public Sector Performance: Evidence from a Health Experiment in Pakistan (2025)</div>
-                          <a class="expand-btn" data-bs-toggle="collapse" data-bs-target="#p16"><i class="far fa-arrow-alt-circle-down"></i></a>
-                          <br><span class="paper-journal">Economic Development and Cultural Change</span>
-                          <span class="paper-authors">With Michael Callen, Ali Hasanain, Muhammad Yasir Khan, and Arman Rezaee.</span>
-                          
-                          <div class="collapse abstract-box" id="p16">
-                              <div class="resource-links">
-                                  <a href="#" class="btn-sm-custom"><i class="far fa-file-pdf"></i> PDF</a>
-                              </div>
-                              <p><strong>Abstract:</strong> This paper provides evidence that the personalities of policymakers matter for policy. Doctors with higher Big Five scores attend work more and falsify inspection reports less.</p>
-                              <div class="citation-text">Callen, M., Gulzar, S., Hasanain, A., Khan, M. Y., & Rezaee, A. (2025). Personalities and Public Sector Performance. <em>Economic Development and Cultural Change</em>.</div>
-                          </div>
-                      </div>
-
-                      <div class="paper-item">
-                          <div class="paper-title">Good Politicians: Experimental Evidence on Motivations for Political Candidacy (2025)</div>
-                          <a class="expand-btn" data-bs-toggle="collapse" data-bs-target="#p15"><i class="far fa-arrow-alt-circle-down"></i></a>
-                          <br><span class="paper-journal">Review of Economic Studies</span>
-                          <span class="paper-authors">With Muhammad Yasir Khan.</span>
-                          
-                          <div class="collapse abstract-box" id="p15">
-                              <div class="resource-links">
-                                  <a href="#" class="btn-sm-custom"><i class="far fa-file-pdf"></i> PDF</a>
-                              </div>
-                              <p><strong>Abstract:</strong> How can we motivate good politicians to enter politics? In a field experiment in Pakistan, emphasizing prosocial motives raises the likelihood that individuals run for office.</p>
-                              <div class="citation-text">Gulzar, S., & Khan, M. Y. (2025). Good Politicians: Experimental Evidence on Motivations. <em>Review of Economic Studies</em>.</div>
-                          </div>
-                      </div>
-
-                      <div class="paper-item">
-                          <div class="paper-title">Inaccurate Forecasting of a Randomized Controlled Trial (2024)</div>
-                          <a class="expand-btn" data-bs-toggle="collapse" data-bs-target="#p13"><i class="far fa-arrow-alt-circle-down"></i></a>
-                          <br><span class="paper-journal">Journal of Experimental Political Science</span>
-                          <span class="paper-authors">With Mats Ahrehshop, Miriam Golden, and Luke Sonnet.</span>
-                          
-                          <div class="collapse abstract-box" id="p13">
-                             <div class="resource-links"><a href="#" class="btn-sm-custom"><i class="far fa-file-pdf"></i> PDF</a></div>
-                             <p><strong>Abstract:</strong> We report results of a forecasting experiment. Forecasters were excessively optimistic about treatment effects and unresponsive to item order.</p>
-                             <div class="citation-text">Ahrehshop, M., Golden, M., Gulzar, S., & Sonnet, L. (2024). Inaccurate Forecasting of a RCT. <em>Journal of Experimental Political Science</em>.</div>
-                          </div>
-                      </div>
-
-                      <div class="paper-item">
-                          <div class="paper-title">Extending the Formal State: The Case of Pakistan’s Frontier Crimes Regulation (2024)</div>
-                          <a class="expand-btn" data-bs-toggle="collapse" data-bs-target="#p12"><i class="far fa-arrow-alt-circle-down"></i></a>
-                          <br><span class="paper-journal">Economica</span>
-                          <span class="paper-authors">With Michael Callen, Arman Rezaee, and Jacob Shapiro.</span>
-                          
-                          <div class="collapse abstract-box" id="p12">
-                             <div class="resource-links"><a href="#" class="btn-sm-custom"><i class="far fa-file-pdf"></i> PDF</a></div>
-                             <p><strong>Abstract:</strong> Why do modern states allow parts of their territory to be governed by non-state actors? We explore this using the FCR in Pakistan.</p>
-                             <div class="citation-text">Callen, M., Gulzar, S., Rezaee, A., & Shapiro, J. (2024). Extending the Formal State. <em>Economica</em>.</div>
-                          </div>
-                      </div>
-
-                      <div class="paper-item">
-                          <div class="paper-title">The Political Economy of Public Sector Absence (2023)</div>
-                          <a class="expand-btn" data-bs-toggle="collapse" data-bs-target="#p10"><i class="far fa-arrow-alt-circle-down"></i></a>
-                          <br><span class="paper-journal">Journal of Public Economics</span>
-                          <span class="paper-authors">With Michael Callen, Ali Hasanain, Muhammad Yasir Khan, and Arman Rezaee.</span>
-                          
-                          <div class="collapse abstract-box" id="p10">
-                             <div class="resource-links"><a href="#" class="btn-sm-custom"><i class="far fa-file-pdf"></i> PDF</a></div>
-                             <p><strong>Abstract:</strong> The paper examines how politics relates to public sector absenteeism in Punjab, Pakistan. Political connections are associated with more doctor absence.</p>
-                             <div class="citation-text">Callen, M., Gulzar, S., et al. (2023). The Political Economy of Public Sector Absence. <em>Journal of Public Economics</em>.</div>
-                          </div>
-                      </div>
-
-                      <div class="paper-item">
-                          <div class="paper-title">Can Campaign Contribution Limits Curb the Influence of Money in Politics? (2022)</div>
-                          <a class="expand-btn" data-bs-toggle="collapse" data-bs-target="#p9"><i class="far fa-arrow-alt-circle-down"></i></a>
-                          <br><span class="paper-journal">American Journal of Political Science</span>
-                          <span class="paper-authors">With Miguel R. Rueda and Nelson A. Ruiz.</span>
-                          
-                          <div class="collapse abstract-box" id="p9">
-                             <div class="resource-links"><a href="#" class="btn-sm-custom"><i class="far fa-file-pdf"></i> PDF</a></div>
-                             <p><strong>Abstract:</strong> Using a regression discontinuity design in Colombia, we show that looser limits increase the number of public contracts assigned to donors.</p>
-                             <div class="citation-text">Gulzar, S., Rueda, M. R., & Ruiz, N. A. (2022). Can Campaign Contribution Limits Curb the Influence of Money? <em>AJPS</em>.</div>
-                          </div>
-                      </div>
-
-                      <div class="paper-item">
-                          <div class="paper-title">How Campaigns Respond to Ballot Position: A New Mechanism for Order Effects (2022)</div>
-                          <a class="expand-btn" data-bs-toggle="collapse" data-bs-target="#p8"><i class="far fa-arrow-alt-circle-down"></i></a>
-                          <br><span class="paper-journal">Journal of Politics</span>
-                          <span class="paper-authors">With Thomas S. Robinson and Nelson A. Ruiz.</span>
-                          
-                          <div class="collapse abstract-box" id="p8">
-                             <div class="resource-links"><a href="#" class="btn-sm-custom"><i class="far fa-file-pdf"></i> PDF</a></div>
-                             <p><strong>Abstract:</strong> We show that campaigns react to being placed on top of the ballot by raising and spending more money, correlated with higher vote shares.</p>
-                             <div class="citation-text">Gulzar, S., Robinson, T. S., & Ruiz, N. A. (2022). How Campaigns Respond to Ballot Position. <em>Journal of Politics</em>.</div>
-                          </div>
-                      </div>
-
-                      <div class="paper-item">
-                          <div class="paper-title">Information, Candidate Selection, and Quality of Representation: Evidence from Nepal (2021)</div>
-                          <a class="expand-btn" data-bs-toggle="collapse" data-bs-target="#p7"><i class="far fa-arrow-alt-circle-down"></i></a>
-                          <br><span class="paper-journal">Journal of Politics</span>
-                          <span class="paper-authors">With Zuhad Hai and Binod Kumar Paudel.</span>
-                          
-                          <div class="collapse abstract-box" id="p7">
-                             <div class="resource-links"><a href="#" class="btn-sm-custom"><i class="far fa-file-pdf"></i> PDF</a></div>
-                             <p><strong>Abstract:</strong> This paper studies candidate selection by party leaders and asks whether poor information about public preferences can lead elite choices to diverge from mass opinion.</p>
-                             <div class="citation-text">Gulzar, S., Hai, Z., & Paudel, B. K. (2021). Information, Candidate Selection, and Quality. <em>Journal of Politics</em>.</div>
-                          </div>
-                      </div>
-
-                      <div class="paper-item">
-                          <div class="paper-title">Who Enters Politics and Why? (2021)</div>
-                          <a class="expand-btn" data-bs-toggle="collapse" data-bs-target="#p6"><i class="far fa-arrow-alt-circle-down"></i></a>
-                          <br><span class="paper-journal">Annual Review of Political Science</span>
-                          
-                          <div class="collapse abstract-box" id="p6">
-                             <div class="resource-links"><a href="#" class="btn-sm-custom"><i class="far fa-file-pdf"></i> PDF</a></div>
-                             <p><strong>Abstract:</strong> This survey presents conceptual issues in measuring political entry and reviews work on individual, organizational, and institutional determinants.</p>
-                             <div class="citation-text">Gulzar, S. (2021). Who Enters Politics and Why? <em>Annual Review of Political Science</em>.</div>
-                          </div>
-                      </div>
-
-                      <div class="paper-item">
-                          <div class="paper-title">Does Political Affirmative Action Work, and for Whom? Theory and Evidence on India’s Scheduled Areas (2020)</div>
-                          <a class="expand-btn" data-bs-toggle="collapse" data-bs-target="#p5"><i class="far fa-arrow-alt-circle-down"></i></a>
-                          <br><span class="paper-journal">American Political Science Review</span>
-                          <span class="paper-authors">With Nicholas Haas and Benjamin Pasquale.</span>
-                          
-                          <div class="collapse abstract-box" id="p5">
-                             <div class="resource-links"><a href="#" class="btn-sm-custom"><i class="far fa-file-pdf"></i> PDF</a></div>
-                             <p><strong>Abstract:</strong> We study the impact of political quotas in India's Scheduled Areas on the welfare of marginalized groups.</p>
-                             <div class="citation-text">Gulzar, S., Haas, N., & Pasquale, B. (2020). Does Political Affirmative Action Work? <em>APSR</em>.</div>
-                          </div>
-                      </div>
-
-                      <div class="paper-item">
-                          <div class="paper-title">Data and Policy Decisions: Experimental Evidence from Pakistan (2020)</div>
-                          <a class="expand-btn" data-bs-toggle="collapse" data-bs-target="#p4"><i class="far fa-arrow-alt-circle-down"></i></a>
-                          <br><span class="paper-journal">Journal of Development Economics</span>
-                          <span class="paper-authors">With Michael Callen, Ali Hasanain, et al.</span>
-                          
-                          <div class="collapse abstract-box" id="p4">
-                             <div class="resource-links"><a href="#" class="btn-sm-custom"><i class="far fa-file-pdf"></i> PDF</a></div>
-                             <p><strong>Abstract:</strong> We study whether providing better data to policymakers improves decision-making in the public health sector.</p>
-                             <div class="citation-text">Callen, M., Gulzar, S., et al. (2020). Data and Policy Decisions. <em>Journal of Development Economics</em>.</div>
-                          </div>
-                      </div>
-
-                      <div class="paper-item">
-                          <div class="paper-title">Can Political Alignment be Costly? (2020)</div>
-                          <a class="expand-btn" data-bs-toggle="collapse" data-bs-target="#p3"><i class="far fa-arrow-alt-circle-down"></i></a>
-                          <br><span class="paper-journal">Journal of Politics</span>
-                          <span class="paper-authors">With Michael Callen and Arman Rezaee.</span>
-                          
-                          <div class="collapse abstract-box" id="p3">
-                             <div class="resource-links"><a href="#" class="btn-sm-custom"><i class="far fa-file-pdf"></i> PDF</a></div>
-                             <p><strong>Abstract:</strong> We examine the costs and benefits of political alignment between local and central governments.</p>
-                             <div class="citation-text">Callen, M., Gulzar, S., & Rezaee, A. (2020). Can Political Alignment be Costly? <em>Journal of Politics</em>.</div>
-                          </div>
-                      </div>
-
-                      <div class="paper-item">
-                          <div class="paper-title">Political Identity: Experimental Evidence on Anti-Americanism in Pakistan (2020)</div>
-                          <a class="expand-btn" data-bs-toggle="collapse" data-bs-target="#p2"><i class="far fa-arrow-alt-circle-down"></i></a>
-                          <br><span class="paper-journal">Journal of the European Economic Association</span>
-                          <span class="paper-authors">With Leonardo Bursztyn, Michael Callen, et al.</span>
-                          
-                          <div class="collapse abstract-box" id="p2">
-                             <div class="resource-links"><a href="#" class="btn-sm-custom"><i class="far fa-file-pdf"></i> PDF</a></div>
-                             <p><strong>Abstract:</strong> We identify Pakistani men's willingness to pay to preserve their anti-American identity using two experiments.</p>
-                             <div class="citation-text">Bursztyn, L., Callen, M., Gulzar, S., et al. (2020). Political Identity. <em>JEEA</em>.</div>
-                          </div>
-                      </div>
-
-                      <div class="paper-item">
-                          <div class="paper-title">Politicians, Bureaucrats, and Development: Evidence from India (2017)</div>
-                          <a class="expand-btn" data-bs-toggle="collapse" data-bs-target="#p1"><i class="far fa-arrow-alt-circle-down"></i></a>
-                          <br><span class="paper-journal">American Political Science Review</span>
-                          <span class="paper-authors">With Benjamin J. Pasquale.</span>
-                          
-                          <div class="collapse abstract-box" id="p1">
-                             <div class="resource-links"><a href="#" class="btn-sm-custom"><i class="far fa-file-pdf"></i> PDF</a></div>
-                             <p><strong>Abstract:</strong> When do politicians prompt bureaucrats to provide effective services? We leverage the uneven overlap of jurisdictions in India.</p>
-                             <div class="citation-text">Gulzar, S., & Pasquale, B. J. (2017). Politicians, Bureaucrats, and Development. <em>APSR</em>.</div>
-                          </div>
-                      </div>
-                      
-                      <h4>Working Papers</h4>
-
-                      <div class="paper-item">
-                          <div class="paper-title">Random Acts of Kindness? How Gender Shapes Helping Behaviors Around the World</div>
-                          <a class="expand-btn" data-bs-toggle="collapse" data-bs-target="#wp1"><i class="far fa-arrow-alt-circle-down"></i></a>
-                          <br>With Salma Mousa. (Under Review)
-                          <div class="collapse abstract-box" id="wp1">
-                             <div class="resource-links"><a href="#" class="btn-sm-custom"><i class="far fa-file-pdf"></i> Draft</a></div>
-                             <p><strong>Abstract:</strong> This study examines how gender shapes helping behaviors using data from 25,000 pedestrians worldwide.</p>
-                             <div class="citation-text">Gulzar, S., & Mousa, S. Random Acts of Kindness? (Under Review).</div>
-                          </div>
-                      </div>
-                      
-                      <div class="paper-item">
-                          <div class="paper-title">Pessimistic Beliefs of Norms: Descriptive Findings on Women’s Political Participation in Pakistan</div>
-                          <a class="expand-btn" data-bs-toggle="collapse" data-bs-target="#wp2"><i class="far fa-arrow-alt-circle-down"></i></a>
-                          <br>With Muhammad Yasir Khan and Luke Sonnet. (Under Review)
-                          <div class="collapse abstract-box" id="wp2">
-                             <div class="resource-links"><a href="#" class="btn-sm-custom"><i class="far fa-file-pdf"></i> Draft</a></div>
-                             <p><strong>Abstract:</strong> We document that perceptions of norms regarding women's political participation are more pessimistic than actual norms.</p>
-                             <div class="citation-text">Gulzar, S., Khan, M. Y., & Sonnet, L. Pessimistic Beliefs of Norms. (Under Review).</div>
-                          </div>
-                      </div>
-                      
-                      <div class="paper-item">
-                          <div class="paper-title">Command and Can’t Control: Assessing Centralized Accountability in the Public Sector</div>
-                          <a class="expand-btn" data-bs-toggle="collapse" data-bs-target="#wp3"><i class="far fa-arrow-alt-circle-down"></i></a>
-                          <br>With Juan Felipe Ladino, Muhammad Zia Mehmood, and Daniel Rogger. (Under Review)
-                          <div class="collapse abstract-box" id="wp3">
-                             <div class="resource-links"><a href="#" class="btn-sm-custom"><i class="far fa-file-pdf"></i> Draft</a></div>
-                             <p><strong>Abstract:</strong> [Placeholder Abstract].</p>
-                             <div class="citation-text">Gulzar, S., Ladino, J. F., Mehmood, M. Z., & Rogger, D. Command and Can’t Control. (Under Review).</div>
-                          </div>
-                      </div>
-
-                      <div class="paper-item">
-                          <div class="paper-title">Increasing Polarization of Hindu-Muslim Identity in India</div>
-                          <a class="expand-btn" data-bs-toggle="collapse" data-bs-target="#wp4"><i class="far fa-arrow-alt-circle-down"></i></a>
-                          <br>With Feyaad Allie, Viktor Enssle, Tanushree Goyal, and Gufran Pathan. (Under Review)
-                          <div class="collapse abstract-box" id="wp4">
-                             <div class="resource-links"><a href="#" class="btn-sm-custom"><i class="far fa-file-pdf"></i> Draft</a></div>
-                             <p><strong>Abstract:</strong> [Placeholder Abstract].</p>
-                             <div class="citation-text">Gulzar, S., et al. Increasing Polarization of Hindu-Muslim Identity. (Under Review).</div>
-                          </div>
-                      </div>
-
-                      <div class="paper-item">
-                          <div class="paper-title">Pay-to-Play: Campaign Contributions and Kickbacks in Public Procurement</div>
-                          <a class="expand-btn" data-bs-toggle="collapse" data-bs-target="#wp5"><i class="far fa-arrow-alt-circle-down"></i></a>
-                          <br>With Juan Felipe Ladino and Juan Felipe Riaño.
-                          <div class="collapse abstract-box" id="wp5">
-                             <div class="resource-links"><a href="#" class="btn-sm-custom"><i class="far fa-file-pdf"></i> Draft</a></div>
-                             <p><strong>Abstract:</strong> [Placeholder Abstract].</p>
-                             <div class="citation-text">Gulzar, S., Ladino, J. F., & Riaño, J. F. Pay-to-Play. (Working Paper).</div>
-                          </div>
-                      </div>
-
-                      <h4>Manuscripts in Progress</h4>
-                      
-                      <div class="paper-item">
-                          <div class="paper-title">Does Revolution Work? Post-revolutionary evolution of Nepal’s political classes</div>
-                          <br><span class="paper-authors">With Bishma Bhusal, Michael Callen, Rohini Pande, Soledad Prillaman, and Deepak Singhania.</span>
-                      </div>
-
-                      <div class="paper-item">
-                          <div class="paper-title">Mobilizing Women at Scale: Mixed Evidence from a Field Experiment</div>
-                          <br><span class="paper-authors">With Anirvan Chowdhury and Durgesh Pathak.</span>
-                      </div>
-                      
-                      <h4>Resting Projects</h4>
-                      <div class="paper-item">
-                          <div class="paper-title">Official Attendance Data for Politically Connected Bureaucrats Are Less Accurate</div>
-                          <br><span class="paper-authors">With Michael Callen, Ali Hasanain, and Muhammad Yasir Khan.</span>
-                      </div>
-
-                  </div>
-
-                  <div class="col-lg-6 ps-lg-5">
-                      <h3>Political Economy of Environment</h3>
-                      
-                      <h4>Publications</h4>
-                      
-                      <div class="paper-item">
-                          <div class="paper-title">Democracy and the Environment (Forthcoming)</div>
-                          <a class="expand-btn" data-bs-toggle="collapse" data-bs-target="#p20"><i class="far fa-arrow-alt-circle-down"></i></a>
-                          <br><span class="paper-journal">Annual Review of Political Science</span>
-                          <span class="paper-authors">With Kathryn Baragwanath.</span>
-                          
-                          <div class="collapse abstract-box" id="p20">
-                              <div class="resource-links">
-                                  <a href="#" class="btn-sm-custom"><i class="far fa-file-pdf"></i> PDF</a>
-                              </div>
-                              <p><strong>Abstract:</strong> We survey research on the relationship between democracy and the environment, examining how democratic systems influence environmental outcomes.</p>
-                              <div class="citation-text">Baragwanath, K., & Gulzar, S. (Forthcoming). Democracy and the Environment. <em>Annual Review of Political Science</em>.</div>
-                          </div>
-                      </div>
-
-                      <div class="paper-item">
-                          <div class="paper-title">Air pollution could be reduced by incentivizing local government officials to control crop burning (2025)</div>
-                          <a class="expand-btn" data-bs-toggle="collapse" data-bs-target="#p18"><i class="far fa-arrow-alt-circle-down"></i></a>
-                          <br><span class="paper-journal">Nature: Policy Brief</span>
-                          <span class="paper-authors">With Gemma Dipoppa.</span>
-                          
-                          <div class="collapse abstract-box" id="p18">
-                              <div class="resource-links">
-                                  <a href="#" class="btn-sm-custom"><i class="far fa-file-pdf"></i> PDF</a>
-                              </div>
-                              <p><strong>Abstract:</strong> Bureaucratic action to punish farmers deters future fires by a further 13%. Thus, using administrator incentives to control crop burning could guide policy.</p>
-                              <div class="citation-text">Dipoppa, G., & Gulzar, S. (2025). Air pollution could be reduced by incentivizing local government. <em>Nature: Policy Brief</em>.</div>
-                          </div>
-                      </div>
-
-                      <div class="paper-item">
-                          <div class="paper-title">Bureaucrat Incentives Reduce Crop Burning and Child Mortality in South Asia (2024)</div>
-                          <a class="expand-btn" data-bs-toggle="collapse" data-bs-target="#p14"><i class="far fa-arrow-alt-circle-down"></i></a>
-                          <br><span class="paper-journal">Nature</span>
-                          <span class="paper-authors">With Gemma Dipoppa.</span>
-                          
-                          <div class="collapse abstract-box" id="p14">
-                              <div class="resource-links">
-                                  <a href="#" class="btn-sm-custom"><i class="far fa-file-pdf"></i> PDF</a>
-                              </div>
-                              <p><strong>Abstract:</strong> We show that crop burning responds to bureaucrats' incentives: fires increase by 15% when wind is most likely to direct pollution to neighboring jurisdictions.</p>
-                              <div class="citation-text">Dipoppa, G., & Gulzar, S. (2024). Bureaucrat Incentives Reduce Crop Burning. <em>Nature</em>.</div>
-                          </div>
-                      </div>
-
-                      <div class="paper-item">
-                          <div class="paper-title">Representation and Forest Conservation: Evidence from India’s Scheduled Areas (2024)</div>
-                          <a class="expand-btn" data-bs-toggle="collapse" data-bs-target="#p11"><i class="far fa-arrow-alt-circle-down"></i></a>
-                          <br><span class="paper-journal">American Political Science Review</span>
-                          <span class="paper-authors">With Apoorva Lal and Benjamin Pasquale.</span>
-                          
-                          <div class="collapse abstract-box" id="p11">
-                              <div class="resource-links">
-                                  <a href="#" class="btn-sm-custom"><i class="far fa-file-pdf"></i> PDF</a>
-                              </div>
-                              <p><strong>Abstract:</strong> We study a 1996 law that created local government councils with mandated representation for India's Scheduled Tribes.</p>
-                              <div class="citation-text">Gulzar, S., Lal, A., & Pasquale, B. (2024). Representation and Forest Conservation. <em>APSR</em>.</div>
-                          </div>
-                      </div>
-
-                      <h4>Manuscripts in Progress</h4>
-                      
-                      <div class="paper-item">
-                          <div class="paper-title">From Paper to Digital: Understanding the Ecological Impacts of India’s Land Records Reform</div>
-                          <br><span class="paper-authors">With Aliz Toth and Anzony Quispe.</span>
-                      </div>
-
-                      <h4>Book Chapters</h4>
-                      <div class="paper-item">
-                          <div class="paper-title">Crop Burning (2025)</div>
-                          <br><span class="paper-journal">Unveiling Pakistan’s Air Pollution</span>
-                          <span class="paper-authors">With Gemma Dipoppa.</span>
-                      </div>
-
-                  </div>
-
+              
+              <h3 class="theme-header">Environment & Climate</h3>
+              
+              <div class="filter-bar" id="filter-env">
+                  <button class="filter-btn active" onclick="filterGroup('env', 'all', this)">All</button>
+                  <button class="filter-btn" onclick="filterGroup('env', 'sa', this)">South Asia</button>
+                  <button class="filter-btn" onclick="filterGroup('env', 'india', this)">India</button>
+                  <button class="filter-btn" onclick="filterGroup('env', 'pak', this)">Pakistan</button>
+                  <button class="filter-btn" onclick="filterGroup('env', 'global', this)">Global</button>
               </div>
-            </div>
 
-            <div class="tab-pane fade" id="expert" role="tabpanel">
-                <div class="mt-4">
-                   <h3>Policy Engagement & Advising</h3>
-                   
-                   <div class="paper-item">
-                       <h5>International Growth Centre (IGC)</h5>
-                       <p class="text-muted">Affiliate Researcher</p>
-                       <p>Leading projects on state capacity, bureaucracy reform, and environmental governance in Pakistan and India.</p>
-                   </div>
-                   
-                   <div class="paper-item">
-                       <h5>JPAL Governance Initiative</h5>
-                       <p class="text-muted">Funded Researcher</p>
-                       <p>Investigating political responsiveness and information provision.</p>
-                   </div>
-                </div>
-             </div>
+              <div id="list-env">
+                  <div class="paper-item tag-sa tag-pak">
+                      <div class="paper-title">Air pollution could be reduced by incentivizing local government officials to control crop burning (2025)</div>
+                      <div class="paper-journal">Nature: Policy Brief</div>
+                      <div class="paper-authors">With Gemma Dipoppa.</div>
+                      <div class="expand-trigger" data-bs-toggle="collapse" data-bs-target="#env1">Abstract & PDF <i class="fas fa-caret-down"></i></div>
+                      <div class="collapse abstract-box" id="env1">
+                          <div class="mb-2"><a href="#" class="btn-download"><i class="far fa-file-pdf"></i> Download PDF</a></div>
+                          <p>Bureaucratic action to punish farmers deters future fires by a further 13%. Thus, using administrator incentives to control crop burning could guide policy.</p>
+                      </div>
+                  </div>
 
-            <div class="tab-pane fade" id="teaching" role="tabpanel">
+                  <div class="paper-item tag-sa">
+                      <div class="paper-title">Bureaucrat Incentives Reduce Crop Burning and Child Mortality in South Asia (2024)</div>
+                      <div class="paper-journal">Nature</div>
+                      <div class="paper-authors">With Gemma Dipoppa.</div>
+                      <div class="expand-trigger" data-bs-toggle="collapse" data-bs-target="#env2">Abstract & PDF <i class="fas fa-caret-down"></i></div>
+                      <div class="collapse abstract-box" id="env2">
+                          <div class="mb-2"><a href="#" class="btn-download"><i class="far fa-file-pdf"></i> Download PDF</a></div>
+                          <p>We show that crop burning responds to bureaucrats' incentives: fires increase by 15% when wind is most likely to direct pollution to neighboring jurisdictions.</p>
+                      </div>
+                  </div>
+
+                  <div class="paper-item tag-india">
+                      <div class="paper-title">Representation and Forest Conservation: Evidence from India’s Scheduled Areas (2024)</div>
+                      <div class="paper-journal">American Political Science Review</div>
+                      <div class="paper-authors">With Apoorva Lal and Benjamin Pasquale.</div>
+                      <div class="expand-trigger" data-bs-toggle="collapse" data-bs-target="#env3">Abstract & PDF <i class="fas fa-caret-down"></i></div>
+                      <div class="collapse abstract-box" id="env3">
+                          <div class="mb-2"><a href="#" class="btn-download"><i class="far fa-file-pdf"></i> Download PDF</a></div>
+                          <p>We study a 1996 law that created local government councils with mandated representation for India's Scheduled Tribes.</p>
+                      </div>
+                  </div>
+
+                  <div class="paper-item tag-global">
+                      <div class="paper-title">Democracy and the Environment (Forthcoming)</div>
+                      <div class="paper-journal">Annual Review of Political Science</div>
+                      <div class="paper-authors">With Kathryn Baragwanath.</div>
+                      <div class="expand-trigger" data-bs-toggle="collapse" data-bs-target="#env4">Abstract & PDF <i class="fas fa-caret-down"></i></div>
+                      <div class="collapse abstract-box" id="env4">
+                          <div class="mb-2"><a href="#" class="btn-download"><i class="far fa-file-pdf"></i> Download PDF</a></div>
+                          <p>We survey research on the relationship between democracy and the environment.</p>
+                      </div>
+                  </div>
+              </div>
+
+
+              <h3 class="theme-header">Elections & Representation</h3>
+              
+              <div class="filter-bar" id="filter-elec">
+                  <button class="filter-btn active" onclick="filterGroup('elec', 'all', this)">All</button>
+                  <button class="filter-btn" onclick="filterGroup('elec', 'india', this)">India</button>
+                  <button class="filter-btn" onclick="filterGroup('elec', 'pak', this)">Pakistan</button>
+                  <button class="filter-btn" onclick="filterGroup('elec', 'nepal', this)">Nepal</button>
+                  <button class="filter-btn" onclick="filterGroup('elec', 'col', this)">Colombia</button>
+                  <button class="filter-btn" onclick="filterGroup('elec', 'global', this)">Global</button>
+              </div>
+
+              <div id="list-elec">
+                  <div class="paper-item tag-india">
+                      <div class="paper-title">Can Party Elites Shape the Rank-and-File? Evidence from a Recruitment Experiment in India (2025)</div>
+                      <div class="paper-journal">American Political Science Review</div>
+                      <div class="paper-authors">With Durgesh Pathak, Sarah Thompson, and Aliz Toth.</div>
+                      <div class="expand-trigger" data-bs-toggle="collapse" data-bs-target="#elec1">Abstract & PDF <i class="fas fa-caret-down"></i></div>
+                      <div class="collapse abstract-box" id="elec1">
+                          <div class="mb-2"><a href="#" class="btn-download"><i class="far fa-file-pdf"></i> Download PDF</a></div>
+                          <p>We show that elite efforts can shape the rank-and-file.</p>
+                      </div>
+                  </div>
+
+                  <div class="paper-item tag-pak">
+                      <div class="paper-title">Good Politicians: Experimental Evidence on Motivations for Political Candidacy (2025)</div>
+                      <div class="paper-journal">Review of Economic Studies</div>
+                      <div class="paper-authors">With Muhammad Yasir Khan.</div>
+                      <div class="expand-trigger" data-bs-toggle="collapse" data-bs-target="#elec2">Abstract & PDF <i class="fas fa-caret-down"></i></div>
+                      <div class="collapse abstract-box" id="elec2">
+                          <div class="mb-2"><a href="#" class="btn-download"><i class="far fa-file-pdf"></i> Download PDF</a></div>
+                          <p>How can we motivate good politicians to enter politics?</p>
+                      </div>
+                  </div>
+
+                  <div class="paper-item tag-pak">
+                      <div class="paper-title">Political Responsiveness, Information Provision, and Capacity Gaps (Forthcoming)</div>
+                      <div class="paper-journal">Comparative Political Studies</div>
+                      <div class="paper-authors">With Miriam Golden and Luke Sonnet.</div>
+                      <div class="expand-trigger" data-bs-toggle="collapse" data-bs-target="#elec3">Abstract & PDF <i class="fas fa-caret-down"></i></div>
+                      <div class="collapse abstract-box" id="elec3">
+                          <div class="mb-2"><a href="#" class="btn-download"><i class="far fa-file-pdf"></i> Download PDF</a></div>
+                          <p>We investigate whether lack of information is one reason politicians may be unresponsive.</p>
+                      </div>
+                  </div>
+
+                  <div class="paper-item tag-col">
+                      <div class="paper-title">Can Campaign Contribution Limits Curb the Influence of Money in Politics? (2022)</div>
+                      <div class="paper-journal">American Journal of Political Science</div>
+                      <div class="paper-authors">With Miguel R. Rueda and Nelson A. Ruiz.</div>
+                      <div class="expand-trigger" data-bs-toggle="collapse" data-bs-target="#elec4">Abstract & PDF <i class="fas fa-caret-down"></i></div>
+                      <div class="collapse abstract-box" id="elec4">
+                          <div class="mb-2"><a href="#" class="btn-download"><i class="far fa-file-pdf"></i> Download PDF</a></div>
+                          <p>Using a regression discontinuity design in Colombia.</p>
+                      </div>
+                  </div>
+
+                  <div class="paper-item tag-nepal">
+                      <div class="paper-title">Information, Candidate Selection, and Quality of Representation: Evidence from Nepal (2021)</div>
+                      <div class="paper-journal">Journal of Politics</div>
+                      <div class="paper-authors">With Zuhad Hai and Binod Kumar Paudel.</div>
+                      <div class="expand-trigger" data-bs-toggle="collapse" data-bs-target="#elec5">Abstract & PDF <i class="fas fa-caret-down"></i></div>
+                      <div class="collapse abstract-box" id="elec5">
+                          <div class="mb-2"><a href="#" class="btn-download"><i class="far fa-file-pdf"></i> Download PDF</a></div>
+                          <p>This paper studies candidate selection by party leaders.</p>
+                      </div>
+                  </div>
+
+                  <div class="paper-item tag-global">
+                      <div class="paper-title">Who Enters Politics and Why? (2021)</div>
+                      <div class="paper-journal">Annual Review of Political Science</div>
+                      <div class="expand-trigger" data-bs-toggle="collapse" data-bs-target="#elec6">Abstract & PDF <i class="fas fa-caret-down"></i></div>
+                      <div class="collapse abstract-box" id="elec6">
+                          <div class="mb-2"><a href="#" class="btn-download"><i class="far fa-file-pdf"></i> Download PDF</a></div>
+                          <p>This survey presents conceptual issues in measuring political entry.</p>
+                      </div>
+                  </div>
+              </div>
+
+
+              <h3 class="theme-header">Bureaucracy & State Effectiveness</h3>
+              
+              <div class="filter-bar" id="filter-bur">
+                  <button class="filter-btn active" onclick="filterGroup('bur', 'all', this)">All</button>
+                  <button class="filter-btn" onclick="filterGroup('bur', 'pak', this)">Pakistan</button>
+                  <button class="filter-btn" onclick="filterGroup('bur', 'india', this)">India</button>
+              </div>
+
+              <div id="list-bur">
+                  <div class="paper-item tag-pak">
+                      <div class="paper-title">Personalities and Public Sector Performance: Evidence from a Health Experiment in Pakistan (2025)</div>
+                      <div class="paper-journal">Economic Development and Cultural Change</div>
+                      <div class="paper-authors">With Michael Callen et al.</div>
+                      <div class="expand-trigger" data-bs-toggle="collapse" data-bs-target="#bur1">Abstract & PDF <i class="fas fa-caret-down"></i></div>
+                      <div class="collapse abstract-box" id="bur1">
+                          <div class="mb-2"><a href="#" class="btn-download"><i class="far fa-file-pdf"></i> Download PDF</a></div>
+                          <p>This paper provides evidence that the personalities of policymakers matter.</p>
+                      </div>
+                  </div>
+
+                  <div class="paper-item tag-pak">
+                      <div class="paper-title">The Political Economy of Public Sector Absence (2023)</div>
+                      <div class="paper-journal">Journal of Public Economics</div>
+                      <div class="paper-authors">With Michael Callen, Ali Hasanain, et al.</div>
+                      <div class="expand-trigger" data-bs-toggle="collapse" data-bs-target="#bur2">Abstract & PDF <i class="fas fa-caret-down"></i></div>
+                      <div class="collapse abstract-box" id="bur2">
+                          <div class="mb-2"><a href="#" class="btn-download"><i class="far fa-file-pdf"></i> Download PDF</a></div>
+                          <p>The paper examines how politics relates to public sector absenteeism.</p>
+                      </div>
+                  </div>
+
+                  <div class="paper-item tag-india">
+                      <div class="paper-title">Politicians, Bureaucrats, and Development: Evidence from India (2017)</div>
+                      <div class="paper-journal">American Political Science Review</div>
+                      <div class="paper-authors">With Benjamin J. Pasquale.</div>
+                      <div class="expand-trigger" data-bs-toggle="collapse" data-bs-target="#bur3">Abstract & PDF <i class="fas fa-caret-down"></i></div>
+                      <div class="collapse abstract-box" id="bur3">
+                          <div class="mb-2"><a href="#" class="btn-download"><i class="far fa-file-pdf"></i> Download PDF</a></div>
+                          <p>When do politicians prompt bureaucrats to provide effective services?</p>
+                      </div>
+                  </div>
+              </div>
+
+
+              <h3 class="theme-header">Identity, Gender & Norms</h3>
+              
+              <div class="filter-bar" id="filter-id">
+                  <button class="filter-btn active" onclick="filterGroup('id', 'all', this)">All</button>
+                  <button class="filter-btn" onclick="filterGroup('id', 'pak', this)">Pakistan</button>
+                  <button class="filter-btn" onclick="filterGroup('id', 'global', this)">Global</button>
+              </div>
+
+              <div id="list-id">
+                  <div class="paper-item tag-pak">
+                      <div class="paper-title">Political Identity: Experimental Evidence on Anti-Americanism in Pakistan (2020)</div>
+                      <div class="paper-journal">Journal of the European Economic Association</div>
+                      <div class="paper-authors">With Leonardo Bursztyn et al.</div>
+                      <div class="expand-trigger" data-bs-toggle="collapse" data-bs-target="#id1">Abstract & PDF <i class="fas fa-caret-down"></i></div>
+                      <div class="collapse abstract-box" id="id1">
+                          <div class="mb-2"><a href="#" class="btn-download"><i class="far fa-file-pdf"></i> Download PDF</a></div>
+                          <p>We identify Pakistani men's willingness to pay to preserve their anti-American identity.</p>
+                      </div>
+                  </div>
+
+                  <div class="paper-item tag-global">
+                      <div class="paper-title">Random Acts of Kindness? How Gender Shapes Helping Behaviors Around the World</div>
+                      <div class="paper-journal">Working Paper</div>
+                      <div class="paper-authors">With Salma Mousa.</div>
+                      <div class="expand-trigger" data-bs-toggle="collapse" data-bs-target="#id2">Abstract & PDF <i class="fas fa-caret-down"></i></div>
+                      <div class="collapse abstract-box" id="id2">
+                          <div class="mb-2"><a href="#" class="btn-download"><i class="far fa-file-pdf"></i> Download PDF</a></div>
+                          <p>Study using data from 25,000 pedestrians worldwide.</p>
+                      </div>
+                  </div>
+              </div>
+
+
+              <h3 class="theme-header">Methodology</h3>
+              <div class="paper-item">
+                  <div class="paper-title">Inaccurate Forecasting of a Randomized Controlled Trial (2024)</div>
+                  <div class="paper-journal">Journal of Experimental Political Science</div>
+                  <div class="paper-authors">With Mats Ahrehshop, Miriam Golden, and Luke Sonnet.</div>
+                  <div class="expand-trigger" data-bs-toggle="collapse" data-bs-target="#meth1">Abstract & PDF <i class="fas fa-caret-down"></i></div>
+                  <div class="collapse abstract-box" id="meth1">
+                      <div class="mb-2"><a href="#" class="btn-download"><i class="far fa-file-pdf"></i> Download PDF</a></div>
+                      <p>We report results of a forecasting experiment.</p>
+                  </div>
+              </div>
+
+            </div> <div class="tab-pane fade" id="teaching" role="tabpanel">
                <div class="mt-4">
-                  
-                  <h3>Princeton University</h3>
-                  <p class="text-muted mb-3"><em>Instructor</em></p>
-                  <ul class="fa-ul mb-5">
-                      <li class="mb-3">
-                          <span class="fa-li"><i class="fa-solid fa-chart-simple"></i></span>
-                          <strong>SPI200 Statistics for Social Science</strong> (Undergraduate lecture)<br>
-                          <a href="#" class="btn-sm-custom mt-1 d-inline-block">Syllabus: Spring 2024</a>
-                      </li>
-                      <li class="mb-3">
-                          <span class="fa-li"><i class="fa-solid fa-building-columns"></i></span>
-                          <strong>SPI593Q Bureaucracy in the Developing World</strong> (Master's seminar)<br>
-                          <a href="#" class="btn-sm-custom mt-1 d-inline-block">Syllabus: Spring 2024</a>
-                      </li>
-                      <li class="mb-3">
-                          <span class="fa-li"><i class="fa-solid fa-flask"></i></span>
-                          <strong>POL505 Experimental Political Science</strong> (PhD seminar)<br>
-                          <a href="#" class="btn-sm-custom mt-1 d-inline-block">Syllabus: Spring 2024</a>
-                      </li>
-                  </ul>
-
-                  <h3>Stanford University</h3>
-                  <p class="text-muted mb-3"><em>Instructor</em></p>
-                  <ul class="fa-ul mb-5">
-                      <li class="mb-3">
-                          <span class="fa-li"><i class="fa-solid fa-magnifying-glass-chart"></i></span>
-                          <strong>POLISCI150C/355C Causal Inference for Social Science</strong><br>
-                          <span class="text-muted">Undergraduate/Master's lecture. Third course in the Data Science methods track.</span><br>
-                          <a href="#" class="btn-sm-custom mt-1 d-inline-block">Syllabus: Spring 2022</a>
-                      </li>
-                      <li class="mb-3">
-                          <span class="fa-li"><i class="fa-solid fa-earth-americas"></i></span>
-                          <strong>COLLEGE105 Politics of Development</strong> (Undergraduate lecture)<br>
-                          <span class="text-muted">Part of the COLLEGE curriculum for Frosh. With Solédad Prillaman.</span><br>
-                          <a href="#" class="btn-sm-custom mt-1 d-inline-block">Syllabus: Spring 2022</a>
-                      </li>
-                      <li class="mb-3">
-                          <span class="fa-li"><i class="fa-solid fa-book-open"></i></span>
-                          <strong>POLISCI440A Theories of Comparative Politics</strong> (PhD seminar)<br>
-                          <span class="text-muted">Core comparative politics seminar. With David Laitin.</span><br>
-                          <a href="#" class="btn-sm-custom mt-1 d-inline-block">Syllabus: Autumn 2019</a>
-                      </li>
-                      <li class="mb-3">
-                          <span class="fa-li"><i class="fa-solid fa-microscope"></i></span>
-                          <strong>POLISCI446E Seminar on Political Economy Experiments</strong> (PhD seminar)<br>
-                          <a href="#" class="btn-sm-custom mt-1 d-inline-block">Syllabus: Spring 2018</a>
-                      </li>
-                  </ul>
-
-                  <h3>New York University</h3>
-                  <p class="text-muted mb-3"><em>Teaching Assistant</em></p>
-                  <ul class="fa-ul mb-5">
-                      <li class="mb-3">
-                          <span class="fa-li"><i class="fa-solid fa-calculator"></i></span>
-                          <strong>Quantitative Political Analysis II</strong> (PhD methods)<br>
-                          <span class="text-muted">Causal inference with Prof. Cyrus Samii.</span>
-                      </li>
-                      <li class="mb-3">
-                          <span class="fa-li"><i class="fa-solid fa-globe"></i></span>
-                          <strong>Introduction to International Politics</strong><br>
-                          <span class="text-muted">Freshman class on game theory applications. With Prof. Shanker Satyanath & Prof. Jennifer Larson.</span>
-                      </li>
-                  </ul>
-
-                  <h3>Other Experience</h3>
+                  <h3>University of Notre Dame</h3>
                   <ul class="fa-ul">
-                      <li class="mb-3">
-                          <span class="fa-li"><i class="fa-solid fa-database"></i></span>
-                          <strong>Advanced Data Management Course</strong><br>
-                          <span class="text-muted">CLEAR (World Bank) and Center for Economic Research Pakistan (2011-12)</span>
-                      </li>
+                      <li><span class="fa-li"><i class="fa-solid fa-book-open"></i></span><strong>Political Economy of Development</strong> (Undergraduate)</li>
+                      <li><span class="fa-li"><i class="fa-solid fa-graduation-cap"></i></span><strong>Comparative Politics Field Seminar</strong> (Ph.D.)</li>
                   </ul>
-
                </div>
             </div>
 
-             <div class="tab-pane fade" id="podcasts" role="tabpanel">
-              <div class="mt-4">
-                 <h3>Media & Audio</h3>
+            <div class="tab-pane fade" id="expert" role="tabpanel">
+               <div class="mt-4"><h3>Policy Engagement</h3><p>Research Advisor to Punjab Revenue Authority.</p></div>
+            </div>
 
-                 <div class="podcast-card">
-                     <div class="play-btn"><i class="fa-regular fa-circle-play"></i></div>
-                     <div>
-                         <h5 class="mb-1"><strong>Nature Podcast</strong></h5>
-                         <p class="mb-0 text-muted">Discussion on crop burning and bureaucrat incentives in South Asia.</p>
-                         <a href="https://www.nature.com/nature/volumes/632/issues/8024/audio" class="small text-primary stretched-link">Listen to Episode</a>
-                     </div>
-                 </div>
+            <div class="tab-pane fade" id="podcasts" role="tabpanel">
+               <div class="mt-4"><h3>Media</h3><p>Nature Podcast on Crop Burning.</p></div>
+            </div>
 
-                 <div class="podcast-card">
-                     <div class="play-btn"><i class="fa-regular fa-circle-play"></i></div>
-                     <div>
-                         <h5 class="mb-1"><strong>VoxDev</strong></h5>
-                         <p class="mb-0 text-muted">Politics and public service delivery.</p>
-                         <a href="https://voxdev.org/" class="small text-primary stretched-link">Listen to Episode</a>
-                     </div>
-                 </div>
-
-              </div>
-           </div>
-
-          </div> </div>
+          </div>
+        </div>
       </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-      // Rotate the arrow icon on click
-      document.querySelectorAll('.expand-btn').forEach(btn => {
-        btn.addEventListener('click', function() {
-           let icon = this.querySelector('i');
-           if(icon.classList.contains('fa-arrow-alt-circle-down')) {
-               icon.classList.remove('fa-arrow-alt-circle-down');
-               icon.classList.add('fa-arrow-alt-circle-up');
-           } else {
-               icon.classList.remove('fa-arrow-alt-circle-up');
-               icon.classList.add('fa-arrow-alt-circle-down');
-           }
-        });
-      });
+      function filterGroup(listID, tag, btn) {
+          // 1. Highlight button
+          let container = document.getElementById('filter-' + listID);
+          let buttons = container.querySelectorAll('.filter-btn');
+          buttons.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          // 2. Filter items
+          let listDiv = document.getElementById('list-' + listID);
+          let items = listDiv.querySelectorAll('.paper-item');
+          
+          items.forEach(item => {
+              if (tag === 'all') {
+                  item.style.display = 'block';
+              } else {
+                  if (item.classList.contains('tag-' + tag)) {
+                      item.style.display = 'block';
+                  } else {
+                      item.style.display = 'none';
+                  }
+              }
+          });
+      }
     </script>
   </body>
 </html>
