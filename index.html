@@ -24,7 +24,7 @@
       h1, h2, h3, h5, .nav-item { font-family: 'Merriweather', serif !important; }
       h1 { font-size: 20pt; font-weight: 700; margin-bottom: 5px; color: #222; }
       h3 { font-size: 1.5em; font-weight: 700; color: #000; border-bottom: 2px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
-      h4 { font-size: 1.2em; font-weight: 700; color: #555; margin-top: 30px; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 0.05em; }
+      h4 { font-size: 1.1em; font-weight: 700; color: #555; margin-top: 40px; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 0.05em; }
 
       /* Links */
       a { color: #5f9fb8; text-decoration: none; transition: color 0.2s; }
@@ -41,9 +41,8 @@
       }
 
       .profile-box {
-        /* THIS IS THE TRANSPARENCY FIX: 0.85 = 85% Opaque */
-        background-color: rgba(255, 255, 255, 0.90);
-        backdrop-filter: blur(5px); /* Adds a slight blur effect to background behind box */
+        background-color: rgba(255, 255, 255, 0.85); /* 85% opacity */
+        backdrop-filter: blur(5px);
         padding: 30px;
         border-radius: 4px;
         box-shadow: 0 4px 20px rgba(0,0,0,0.15);
@@ -80,11 +79,39 @@
       }
       .nav-link:hover { color: #5f9fb8; }
       
-      /* LIST ITEMS */
-      .paper-item { margin-bottom: 20px; }
-      .paper-title { font-size: 1.05em; margin-bottom: 3px; line-height: 1.4; display: block; }
+      /* PAPER LIST STYLING */
+      .paper-item { margin-bottom: 25px; }
+      .paper-title { font-size: 1.05em; line-height: 1.4; display: inline; color: #333; }
       .paper-journal { font-style: italic; color: #555; }
       .paper-authors { font-size: 0.95em; color: #666; }
+      
+      /* The Expand Button */
+      .expand-btn {
+          color: #5f9fb8;
+          cursor: pointer;
+          font-size: 1.1em;
+          margin-left: 5px;
+      }
+      .expand-btn:hover { color: #3a7ca5; }
+
+      /* The Hidden Box (Abstract + Buttons) */
+      .abstract-box {
+          margin-top: 10px;
+          background: #f9f9f9;
+          padding: 15px;
+          border-radius: 5px;
+          font-size: 0.95em;
+          color: #444;
+          border-left: 3px solid #5f9fb8;
+      }
+      
+      .resource-links {
+          margin-bottom: 10px;
+          font-weight: bold;
+          font-size: 0.9em;
+      }
+      .resource-links a { margin-right: 15px; }
+      .resource-links i { margin-right: 4px; }
       
       /* Podcast Box */
       .podcast-card {
@@ -172,137 +199,244 @@
                   <div class="col-lg-6 pe-lg-4">
                       <h3>Political Economy of Development</h3>
                       
-                      <h4>Selected Publications</h4>
+                      <h4>Publications</h4>
                       
                       <div class="paper-item">
                           <strong class="paper-title">“Political Responsiveness, Information Provision, and Capacity Gaps” (forthcoming)</strong>
-                          <span class="paper-journal">Comparative Political Studies</span>. With Miriam Golden and Luke Sonnet.
+                          <a class="expand-btn" data-bs-toggle="collapse" data-bs-target="#p19"><i class="far fa-arrow-alt-circle-down"></i></a>
+                          <br><span class="paper-journal">Comparative Political Studies</span>. With Miriam Golden and Luke Sonnet.
+                          
+                          <div class="collapse abstract-box" id="p19">
+                              <div class="resource-links">
+                                  <a href="#"><i class="far fa-file-pdf"></i> PDF</a>
+                                  <a href="#"><i class="fas fa-quote-left"></i> Cite</a>
+                              </div>
+                              <p>We investigate whether lack of information is one reason politicians may be unresponsive to voter preferences using a randomized control trial in Pakistan.</p>
+                          </div>
                       </div>
 
                       <div class="paper-item">
                           <strong class="paper-title">“Can Party Elites Shape the Rank-and-File? Evidence from a Recruitment Experiment in India” (2025)</strong>
-                          <span class="paper-journal">American Political Science Review</span>. With Durgesh Pathak, Sarah Thompson, and Aliz Toth.
+                          <a class="expand-btn" data-bs-toggle="collapse" data-bs-target="#p17"><i class="far fa-arrow-alt-circle-down"></i></a>
+                          <br><span class="paper-journal">American Political Science Review</span>. With Durgesh Pathak, Sarah Thompson, and Aliz Toth.
+                          
+                          <div class="collapse abstract-box" id="p17">
+                              <div class="resource-links">
+                                  <a href="#"><i class="far fa-file-pdf"></i> PDF</a>
+                                  <a href="#"><i class="fas fa-quote-left"></i> Cite</a>
+                              </div>
+                              <p>We analyze a field experiment conducted by an Indian party that randomized recruitment messages. We show that elite efforts can shape the rank-and-file.</p>
+                          </div>
                       </div>
 
                       <div class="paper-item">
                           <strong class="paper-title">“Personalities and Public Sector Performance: Evidence from a Health Experiment in Pakistan” (2025)</strong>
-                          <span class="paper-journal">Economic Development and Cultural Change</span>. With Michael Callen, Ali Hasanain, Muhammad Yasir Khan, and Arman Rezaee.
+                          <a class="expand-btn" data-bs-toggle="collapse" data-bs-target="#p16"><i class="far fa-arrow-alt-circle-down"></i></a>
+                          <br><span class="paper-journal">Economic Development and Cultural Change</span>. With Michael Callen, Ali Hasanain, et al.
+                          
+                          <div class="collapse abstract-box" id="p16">
+                              <div class="resource-links">
+                                  <a href="#"><i class="far fa-file-pdf"></i> PDF</a>
+                                  <a href="#"><i class="fas fa-quote-left"></i> Cite</a>
+                              </div>
+                              <p>This paper provides evidence that the personalities of policymakers matter for policy outcomes in the health sector.</p>
+                          </div>
                       </div>
 
                       <div class="paper-item">
-                          <strong class="paper-title">“Good Politicians: Experimental Evidence on Motivations for Political Candidacy and Government Performance” (2025)</strong>
-                          <span class="paper-journal">Review of Economic Studies</span>. With Muhammad Yasir Khan.
+                          <strong class="paper-title">“Good Politicians: Experimental Evidence on Motivations for Political Candidacy” (2025)</strong>
+                          <a class="expand-btn" data-bs-toggle="collapse" data-bs-target="#p15"><i class="far fa-arrow-alt-circle-down"></i></a>
+                          <br><span class="paper-journal">Review of Economic Studies</span>. With Muhammad Yasir Khan.
+                          
+                          <div class="collapse abstract-box" id="p15">
+                              <div class="resource-links">
+                                  <a href="#"><i class="far fa-file-pdf"></i> PDF</a>
+                                  <a href="#"><i class="fas fa-quote-left"></i> Cite</a>
+                              </div>
+                              <p>How can we motivate good politicians to enter politics? We vary how political office is portrayed to ordinary citizens in a field experiment in Pakistan.</p>
+                          </div>
                       </div>
 
                       <div class="paper-item">
                           <strong class="paper-title">“Inaccurate Forecasting of a Randomized Controlled Trial” (2024)</strong>
-                          <span class="paper-journal">Journal of Experimental Political Science</span>. With Mats Ahrehshop, Miriam Golden, and Luke Sonnet.
+                          <a class="expand-btn" data-bs-toggle="collapse" data-bs-target="#p13"><i class="far fa-arrow-alt-circle-down"></i></a>
+                          <br><span class="paper-journal">Journal of Experimental Political Science</span>. With Mats Ahrehshop, Miriam Golden, and Luke Sonnet.
+                          
+                          <div class="collapse abstract-box" id="p13">
+                             <div class="resource-links"><a href="#"><i class="far fa-file-pdf"></i> PDF</a></div>
+                             <p>We report results of a forecasting experiment about a randomized controlled trial that was conducted in the field.</p>
+                          </div>
                       </div>
 
                       <div class="paper-item">
                           <strong class="paper-title">“Extending the Formal State: The Case of Pakistan’s Frontier Crimes Regulation” (2024)</strong>
-                          <span class="paper-journal">Economica</span>. With Michael Callen, Arman Rezaee, and Jacob Shapiro.
+                          <a class="expand-btn" data-bs-toggle="collapse" data-bs-target="#p12"><i class="far fa-arrow-alt-circle-down"></i></a>
+                          <br><span class="paper-journal">Economica</span>. With Michael Callen, Arman Rezaee, and Jacob Shapiro.
+                          
+                          <div class="collapse abstract-box" id="p12">
+                             <div class="resource-links"><a href="#"><i class="far fa-file-pdf"></i> PDF</a></div>
+                             <p>Why do modern states allow parts of their territory to be governed by non-state actors? We explore this using the Frontier Crimes Regulation (FCR) in Pakistan.</p>
+                          </div>
                       </div>
 
                       <div class="paper-item">
                           <strong class="paper-title">“The Political Economy of Public Sector Absence” (2023)</strong>
-                          <span class="paper-journal">Journal of Public Economics</span>. With Michael Callen, Ali Hasanain, Muhammad Yasir Khan, and Arman Rezaee.
+                          <a class="expand-btn" data-bs-toggle="collapse" data-bs-target="#p10"><i class="far fa-arrow-alt-circle-down"></i></a>
+                          <br><span class="paper-journal">Journal of Public Economics</span>. With Michael Callen, Ali Hasanain, et al.
+                          
+                          <div class="collapse abstract-box" id="p10">
+                             <div class="resource-links"><a href="#"><i class="far fa-file-pdf"></i> PDF</a></div>
+                             <p>The paper examines how politics relates to public sector absenteeism in Punjab, Pakistan.</p>
+                          </div>
                       </div>
 
                       <div class="paper-item">
                           <strong class="paper-title">“Can Campaign Contribution Limits Curb the Influence of Money in Politics?” (2022)</strong>
-                          <span class="paper-journal">American Journal of Political Science</span>, 66(4). With Miguel R. Rueda and Nelson A. Ruiz.
+                          <a class="expand-btn" data-bs-toggle="collapse" data-bs-target="#p9"><i class="far fa-arrow-alt-circle-down"></i></a>
+                          <br><span class="paper-journal">American Journal of Political Science</span>. With Miguel R. Rueda and Nelson A. Ruiz.
+                          
+                          <div class="collapse abstract-box" id="p9">
+                             <div class="resource-links"><a href="#"><i class="far fa-file-pdf"></i> PDF</a></div>
+                             <p>Using a regression discontinuity design in Colombia, we show that looser limits increase the number of public contracts assigned to donors.</p>
+                          </div>
                       </div>
 
                       <div class="paper-item">
                           <strong class="paper-title">“How Campaigns Respond to Ballot Position: A New Mechanism for Order Effects” (2022)</strong>
-                          <span class="paper-journal">Journal of Politics</span>, 84(2). With Thomas S. Robinson and Nelson A. Ruiz.
+                          <a class="expand-btn" data-bs-toggle="collapse" data-bs-target="#p8"><i class="far fa-arrow-alt-circle-down"></i></a>
+                          <br><span class="paper-journal">Journal of Politics</span>. With Thomas S. Robinson and Nelson A. Ruiz.
+                          
+                          <div class="collapse abstract-box" id="p8">
+                             <div class="resource-links"><a href="#"><i class="far fa-file-pdf"></i> PDF</a></div>
+                             <p>We show that campaigns react to being placed on top of the ballot by raising and spending more money.</p>
+                          </div>
                       </div>
 
                       <div class="paper-item">
                           <strong class="paper-title">“Information, Candidate Selection, and Quality of Representation: Evidence from Nepal” (2021)</strong>
-                          <span class="paper-journal">Journal of Politics</span>, 83(4). With Zuhad Hai and Binod Kumar Paudel.
+                          <a class="expand-btn" data-bs-toggle="collapse" data-bs-target="#p7"><i class="far fa-arrow-alt-circle-down"></i></a>
+                          <br><span class="paper-journal">Journal of Politics</span>. With Zuhad Hai and Binod Kumar Paudel.
+                          
+                          <div class="collapse abstract-box" id="p7">
+                             <div class="resource-links"><a href="#"><i class="far fa-file-pdf"></i> PDF</a></div>
+                             <p>This paper studies candidate selection by party leaders and asks whether poor information about public preferences leads to divergence.</p>
+                          </div>
                       </div>
 
                       <div class="paper-item">
                           <strong class="paper-title">“Who Enters Politics and Why?” (2021)</strong>
-                          <span class="paper-journal">Annual Review of Political Science</span>.
+                          <a class="expand-btn" data-bs-toggle="collapse" data-bs-target="#p6"><i class="far fa-arrow-alt-circle-down"></i></a>
+                          <br><span class="paper-journal">Annual Review of Political Science</span>.
+                          
+                          <div class="collapse abstract-box" id="p6">
+                             <div class="resource-links"><a href="#"><i class="far fa-file-pdf"></i> PDF</a></div>
+                             <p>This survey presents conceptual issues in measuring political entry and reviews work on individual determinants of entry.</p>
+                          </div>
                       </div>
 
                       <div class="paper-item">
                           <strong class="paper-title">“Does Political Affirmative Action Work, and for Whom? Theory and Evidence on India’s Scheduled Areas” (2020)</strong>
-                          <span class="paper-journal">American Political Science Review</span>, 114(4). With Nicholas Haas and Benjamin Pasquale.
+                          <a class="expand-btn" data-bs-toggle="collapse" data-bs-target="#p5"><i class="far fa-arrow-alt-circle-down"></i></a>
+                          <br><span class="paper-journal">American Political Science Review</span>. With Nicholas Haas and Benjamin Pasquale.
+                          
+                          <div class="collapse abstract-box" id="p5">
+                             <div class="resource-links"><a href="#"><i class="far fa-file-pdf"></i> PDF</a></div>
+                             <p>We study the impact of political quotas in India's Scheduled Areas on the welfare of marginalized groups.</p>
+                          </div>
                       </div>
 
                       <div class="paper-item">
                           <strong class="paper-title">“Data and Policy Decisions: Experimental Evidence from Pakistan” (2020)</strong>
-                          <span class="paper-journal">Journal of Development Economics</span>, 146. With Michael Callen, Ali Hasanain, Muhammad Yasir Khan, and Arman Rezaee.
+                          <a class="expand-btn" data-bs-toggle="collapse" data-bs-target="#p4"><i class="far fa-arrow-alt-circle-down"></i></a>
+                          <br><span class="paper-journal">Journal of Development Economics</span>. With Michael Callen, Ali Hasanain, et al.
+                          
+                          <div class="collapse abstract-box" id="p4">
+                             <div class="resource-links"><a href="#"><i class="far fa-file-pdf"></i> PDF</a></div>
+                             <p>We study whether providing better data to policymakers improves decision-making in the public health sector.</p>
+                          </div>
                       </div>
 
                       <div class="paper-item">
                           <strong class="paper-title">“Can Political Alignment be Costly?” (2020)</strong>
-                          <span class="paper-journal">Journal of Politics</span>, 82(2). With Michael Callen and Arman Rezaee.
+                          <a class="expand-btn" data-bs-toggle="collapse" data-bs-target="#p3"><i class="far fa-arrow-alt-circle-down"></i></a>
+                          <br><span class="paper-journal">Journal of Politics</span>. With Michael Callen and Arman Rezaee.
+                          
+                          <div class="collapse abstract-box" id="p3">
+                             <div class="resource-links"><a href="#"><i class="far fa-file-pdf"></i> PDF</a></div>
+                             <p>We examine the costs and benefits of political alignment between local and central governments.</p>
+                          </div>
                       </div>
 
                       <div class="paper-item">
                           <strong class="paper-title">“Political Identity: Experimental Evidence on Anti-Americanism in Pakistan” (2020)</strong>
-                          <span class="paper-journal">Journal of the European Economic Association</span>, 18(5). With Leonardo Bursztyn, Michael Callen, Bruno Ferman, Ali Hasanain & Noam Yuchtman.
+                          <a class="expand-btn" data-bs-toggle="collapse" data-bs-target="#p2"><i class="far fa-arrow-alt-circle-down"></i></a>
+                          <br><span class="paper-journal">Journal of the European Economic Association</span>. With Leonardo Bursztyn, et al.
+                          
+                          <div class="collapse abstract-box" id="p2">
+                             <div class="resource-links"><a href="#"><i class="far fa-file-pdf"></i> PDF</a></div>
+                             <p>We identify Pakistani men's willingness to pay to preserve their anti-American identity using two experiments.</p>
+                          </div>
                       </div>
 
                       <div class="paper-item">
                           <strong class="paper-title">“Politicians, Bureaucrats, and Development: Evidence from India” (2017)</strong>
-                          <span class="paper-journal">American Political Science Review</span>, 111(1). With Benjamin J. Pasquale.
+                          <a class="expand-btn" data-bs-toggle="collapse" data-bs-target="#p1"><i class="far fa-arrow-alt-circle-down"></i></a>
+                          <br><span class="paper-journal">American Political Science Review</span>. With Benjamin J. Pasquale.
+                          
+                          <div class="collapse abstract-box" id="p1">
+                             <div class="resource-links"><a href="#"><i class="far fa-file-pdf"></i> PDF</a></div>
+                             <p>When do politicians prompt bureaucrats to provide effective services? We leverage the uneven overlap of jurisdictions in India.</p>
+                          </div>
                       </div>
                       
                       <h4>Working Papers</h4>
 
                       <div class="paper-item">
                           <strong class="paper-title">“Random Acts of Kindness? How Gender Shapes Helping Behaviors Around the World”</strong>
-                          <span class="paper-authors">With Salma Mousa. (Under Review)</span>
+                          <a class="expand-btn" data-bs-toggle="collapse" data-bs-target="#wp1"><i class="far fa-arrow-alt-circle-down"></i></a>
+                          <br>With Salma Mousa. (Under Review)
+                          <div class="collapse abstract-box" id="wp1">
+                             <div class="resource-links"><a href="#"><i class="far fa-file-pdf"></i> Draft</a></div>
+                             <p>Abstract pending.</p>
+                          </div>
                       </div>
                       
                       <div class="paper-item">
                           <strong class="paper-title">“Pessimistic Beliefs of Norms: Descriptive Findings on Women’s Political Participation in Pakistan”</strong>
-                          <span class="paper-authors">With Muhammad Yasir Khan and Luke Sonnet. (Under Review)</span>
-                      </div>
-
-                      <div class="paper-item">
-                          <strong class="paper-title">“Command and Can’t Control: Assessing Centralized Accountability in the Public Sector”</strong>
-                          <span class="paper-authors">With Juan Felipe Ladino, Muhammad Zia Mehmood, and Daniel Rogger. (Under Review)</span>
+                          <a class="expand-btn" data-bs-toggle="collapse" data-bs-target="#wp2"><i class="far fa-arrow-alt-circle-down"></i></a>
+                          <br>With Muhammad Yasir Khan and Luke Sonnet. (Under Review)
+                          <div class="collapse abstract-box" id="wp2">
+                             <div class="resource-links"><a href="#"><i class="far fa-file-pdf"></i> Draft</a></div>
+                             <p>Abstract pending.</p>
+                          </div>
                       </div>
                       
                       <div class="paper-item">
-                          <strong class="paper-title">“Increasing Polarization of Hindu-Muslim Identity in India”</strong>
-                          <span class="paper-authors">With Feyaad Allie, Viktor Enssle, Tanushree Goyal, and Gufran Pathan. (Under Review)</span>
-                      </div>
-
-                      <div class="paper-item">
                           <strong class="paper-title">“Pay-to-Play: Campaign Contributions and Kickbacks in Public Procurement”</strong>
-                          <span class="paper-authors">With Juan Felipe Ladino and Juan Felipe Riaño.</span>
+                          <a class="expand-btn" data-bs-toggle="collapse" data-bs-target="#wp3"><i class="far fa-arrow-alt-circle-down"></i></a>
+                          <br>With Juan Felipe Ladino and Juan Felipe Riaño.
+                          <div class="collapse abstract-box" id="wp3">
+                             <div class="resource-links"><a href="#"><i class="far fa-file-pdf"></i> Draft</a></div>
+                             <p>Abstract pending.</p>
+                          </div>
                       </div>
 
                       <h4>Manuscripts in Progress</h4>
                       
                       <div class="paper-item">
                           <strong class="paper-title">“Does Revolution Work? Post-revolutionary evolution of Nepal’s political classes”</strong>
-                          <span class="paper-authors">With Bishma Bhusal, Michael Callen, Rohini Pande, Soledad Prillaman, and Deepak Singhania.</span>
+                          <br>With Bishma Bhusal, Michael Callen, Rohini Pande, Soledad Prillaman, and Deepak Singhania.
                       </div>
 
                       <div class="paper-item">
                           <strong class="paper-title">“Mobilizing Women at Scale: Mixed Evidence from a Field Experiment”</strong>
-                          <span class="paper-authors">With Anirvan Chowdhury and Durgesh Pathak.</span>
-                      </div>
-
-                      <h4>Book Chapters</h4>
-                      <div class="paper-item">
-                          <strong class="paper-title">“Studying Sensitive Topics in Fragile Contexts” (2019)</strong>
-                          <span class="paper-journal">Data collection in Fragile States</span>. With Mohammed Isaqzadeh and Jacob Shapiro.
+                          <br>With Anirvan Chowdhury and Durgesh Pathak.
                       </div>
                       
                       <h4>Resting Projects</h4>
                       <div class="paper-item">
                           <strong class="paper-title">“Official Attendance Data for Politically Connected Bureaucrats Are Less Accurate”</strong>
-                          <span class="paper-authors">With Michael Callen, Ali Hasanain, and Muhammad Yasir Khan.</span>
+                          <br>With Michael Callen, Ali Hasanain, and Muhammad Yasir Khan.
                       </div>
 
                   </div>
@@ -310,39 +444,75 @@
                   <div class="col-lg-6 ps-lg-4">
                       <h3>Political Economy of Environment</h3>
                       
-                      <h4>Selected Publications</h4>
+                      <h4>Publications</h4>
                       
                       <div class="paper-item">
                           <strong class="paper-title">“Democracy and the Environment” (forthcoming)</strong>
-                          <span class="paper-journal">Annual Review of Political Science</span>. With Kathryn Baragwanath.
+                          <a class="expand-btn" data-bs-toggle="collapse" data-bs-target="#p20"><i class="far fa-arrow-alt-circle-down"></i></a>
+                          <br><span class="paper-journal">Annual Review of Political Science</span>. With Kathryn Baragwanath.
+                          
+                          <div class="collapse abstract-box" id="p20">
+                              <div class="resource-links">
+                                  <a href="#"><i class="far fa-file-pdf"></i> PDF</a>
+                                  <a href="#"><i class="fas fa-quote-left"></i> Cite</a>
+                              </div>
+                              <p>We survey research on the relationship between democracy and the environment, examining how democratic systems influence environmental outcomes.</p>
+                          </div>
                       </div>
 
                       <div class="paper-item">
                           <strong class="paper-title">“Air pollution could be reduced by incentivizing local government officials to control crop burning“ (2025)</strong>
-                          <span class="paper-journal">Nature: Policy Brief</span>. With Gemma Dipoppa.
+                          <a class="expand-btn" data-bs-toggle="collapse" data-bs-target="#p18"><i class="far fa-arrow-alt-circle-down"></i></a>
+                          <br><span class="paper-journal">Nature: Policy Brief</span>. With Gemma Dipoppa.
+                          
+                          <div class="collapse abstract-box" id="p18">
+                              <div class="resource-links">
+                                  <a href="#"><i class="far fa-file-pdf"></i> PDF</a>
+                                  <a href="#"><i class="fas fa-quote-left"></i> Cite</a>
+                              </div>
+                              <p>Bureaucratic action to punish farmers deters future fires by a further 13%. Thus, using administrator incentives to control crop burning could guide policy.</p>
+                          </div>
                       </div>
 
                       <div class="paper-item">
                           <strong class="paper-title">“Bureaucrat Incentives Reduce Crop Burning and Child Mortality in South Asia“ (2024)</strong>
-                          <span class="paper-journal">Nature</span>. With Gemma Dipoppa.
+                          <a class="expand-btn" data-bs-toggle="collapse" data-bs-target="#p14"><i class="far fa-arrow-alt-circle-down"></i></a>
+                          <br><span class="paper-journal">Nature</span>. With Gemma Dipoppa.
+                          
+                          <div class="collapse abstract-box" id="p14">
+                              <div class="resource-links">
+                                  <a href="#"><i class="far fa-file-pdf"></i> PDF</a>
+                                  <a href="#"><i class="fas fa-quote-left"></i> Cite</a>
+                              </div>
+                              <p>We show that crop burning responds to bureaucrats' incentives: fires increase by 15% when wind is most likely to direct pollution to neighboring jurisdictions.</p>
+                          </div>
                       </div>
 
                       <div class="paper-item">
                           <strong class="paper-title">“Representation and Forest Conservation: Evidence from India’s Scheduled Areas” (2024)</strong>
-                          <span class="paper-journal">American Political Science Review</span>. With Apoorva Lal and Benjamin Pasquale.
+                          <a class="expand-btn" data-bs-toggle="collapse" data-bs-target="#p11"><i class="far fa-arrow-alt-circle-down"></i></a>
+                          <br><span class="paper-journal">American Political Science Review</span>. With Apoorva Lal and Benjamin Pasquale.
+                          
+                          <div class="collapse abstract-box" id="p11">
+                              <div class="resource-links">
+                                  <a href="#"><i class="far fa-file-pdf"></i> PDF</a>
+                                  <a href="#"><i class="fas fa-quote-left"></i> Cite</a>
+                              </div>
+                              <p>We study a 1996 law that created local government councils with mandated representation for India's Scheduled Tribes.</p>
+                          </div>
                       </div>
 
                       <h4>Manuscripts in Progress</h4>
                       
                       <div class="paper-item">
                           <strong class="paper-title">“From Paper to Digital: Understanding the Ecological Impacts of India’s Land Records Reform”</strong>
-                          <span class="paper-authors">With Aliz Toth and Anzony Quispe.</span>
+                          <br>With Aliz Toth and Anzony Quispe.
                       </div>
 
                       <h4>Book Chapters</h4>
                       <div class="paper-item">
                           <strong class="paper-title">“Crop Burning” (2025)</strong>
-                          <span class="paper-journal">Unveiling Pakistan’s Air Pollution</span>. With Gemma Dipoppa.
+                          <br><span class="paper-journal">Unveiling Pakistan’s Air Pollution</span>. With Gemma Dipoppa.
                       </div>
 
                   </div>
@@ -414,5 +584,6 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
-</html>
+    <script>
+      // Rotate the arrow icon on click
+      document.querySelectorAll('.expand-btn').forEach
