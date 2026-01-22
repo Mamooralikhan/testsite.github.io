@@ -23,7 +23,9 @@
       /* Typography */
       h1, h2, h3, h5, .nav-item { font-family: 'Merriweather', serif !important; }
       h1 { font-size: 20pt; font-weight: 700; margin-bottom: 5px; color: #222; }
-      
+      h3 { font-size: 1.5em; font-weight: 700; color: #000; border-bottom: 2px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+      h4 { font-size: 1.2em; font-weight: 700; color: #555; margin-top: 30px; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 0.05em; }
+
       /* Links */
       a { color: #5f9fb8; text-decoration: none; transition: color 0.2s; }
       a:hover { color: #3a7ca5; text-decoration: none; }
@@ -39,7 +41,9 @@
       }
 
       .profile-box {
-        background-color: #fff;
+        /* THIS IS THE TRANSPARENCY FIX: 0.85 = 85% Opaque */
+        background-color: rgba(255, 255, 255, 0.90);
+        backdrop-filter: blur(5px); /* Adds a slight blur effect to background behind box */
         padding: 30px;
         border-radius: 4px;
         box-shadow: 0 4px 20px rgba(0,0,0,0.15);
@@ -77,10 +81,10 @@
       .nav-link:hover { color: #5f9fb8; }
       
       /* LIST ITEMS */
-      .paper-title { font-size: 1.05em; margin-bottom: 5px; line-height: 1.4; }
+      .paper-item { margin-bottom: 20px; }
+      .paper-title { font-size: 1.05em; margin-bottom: 3px; line-height: 1.4; display: block; }
       .paper-journal { font-style: italic; color: #555; }
-      .paper-links { font-size: 0.9em; margin-top: 2px; margin-bottom: 25px; }
-      .paper-links a { margin-right: 15px; color: #5f9fb8; }
+      .paper-authors { font-size: 0.95em; color: #666; }
       
       /* Podcast Box */
       .podcast-card {
@@ -118,7 +122,7 @@
                     </h5>
                     
                     <p style="font-size: 0.9em; margin-bottom: 5px; color: #666;">
-                        <strong>Concurrent Associate Professor of Economics</strong>
+                        <strong>Research Manager:</strong> Latin America & South Asia
                     </p>
 
                     <div class="icon-row">
@@ -143,7 +147,7 @@
 
     <div class="container">
       <div class="row justify-content-center">
-        <div class="col-lg-10">
+        <div class="col-lg-12">
           
           <ul class="nav nav-tabs justify-content-center" id="mainNav" role="tablist">
             <li class="nav-item">
@@ -163,52 +167,186 @@
           <div class="tab-content" id="nav-tabContent">
             
             <div class="tab-pane fade show active" id="research" role="tabpanel">
-              <h3 class="mb-4 mt-4">Selected Publications</h3>
+              <div class="row">
+                  
+                  <div class="col-lg-6 pe-lg-4">
+                      <h3>Political Economy of Development</h3>
+                      
+                      <h4>Selected Publications</h4>
+                      
+                      <div class="paper-item">
+                          <strong class="paper-title">“Political Responsiveness, Information Provision, and Capacity Gaps” (forthcoming)</strong>
+                          <span class="paper-journal">Comparative Political Studies</span>. With Miriam Golden and Luke Sonnet.
+                      </div>
 
-              <div class="mb-4">
-                <div class="paper-title">
-                  <strong>“Bureaucrat Incentives Reduce Crop Burning and Child Mortality in South Asia”</strong>
-                  <br><span class="paper-journal">Nature (2024)</span>. With Gemma Dipoppa.
-                </div>
-                <div class="paper-links">
-                  <a href="#"><i class="far fa-file-pdf"></i> PDF</a>
-                  <a href="#"><i class="fas fa-quote-left"></i> Cite</a>
-                </div>
-              </div>
+                      <div class="paper-item">
+                          <strong class="paper-title">“Can Party Elites Shape the Rank-and-File? Evidence from a Recruitment Experiment in India” (2025)</strong>
+                          <span class="paper-journal">American Political Science Review</span>. With Durgesh Pathak, Sarah Thompson, and Aliz Toth.
+                      </div>
 
-              <div class="mb-4">
-                <div class="paper-title">
-                  <strong>“Can Party Elites Shape the Rank-and-File? Evidence from a Recruitment Experiment in India”</strong>
-                  <br><span class="paper-journal">American Political Science Review (2025)</span>. With Durgesh Pathak, Sarah Thompson, and Aliz Toth.
-                </div>
-                <div class="paper-links">
-                  <a href="#"><i class="far fa-file-pdf"></i> PDF</a>
-                  <a href="#"><i class="fas fa-quote-left"></i> Cite</a>
-                </div>
-              </div>
-              
-               <div class="mb-4">
-                <div class="paper-title">
-                  <strong>“Personalities and Public Sector Performance: Evidence from a Health Experiment in Pakistan”</strong>
-                  <br><span class="paper-journal">Economic Development and Cultural Change (2025)</span>. With Michael Callen, Ali Hasanain, Muhammad Yasir Khan, and Arman Rezaee.
-                </div>
-                <div class="paper-links">
-                  <a href="#"><i class="far fa-file-pdf"></i> PDF</a>
-                  <a href="#"><i class="fas fa-quote-left"></i> Cite</a>
-                </div>
-              </div>
+                      <div class="paper-item">
+                          <strong class="paper-title">“Personalities and Public Sector Performance: Evidence from a Health Experiment in Pakistan” (2025)</strong>
+                          <span class="paper-journal">Economic Development and Cultural Change</span>. With Michael Callen, Ali Hasanain, Muhammad Yasir Khan, and Arman Rezaee.
+                      </div>
 
-              <hr class="my-5">
-              <h3 class="mb-4">Working Papers</h3>
-              
-              <div class="mb-4">
-                <div class="paper-title">
-                    <strong>“Random Acts of Kindness? How Gender Shapes Helping Behaviors Around the World”</strong>
-                    <br>With Salma Mousa. <i>(Under Review)</i>
-                </div>
-                <div class="paper-links">
-                    <a href="#"><i class="far fa-file-pdf"></i> Draft</a>
-                </div>
+                      <div class="paper-item">
+                          <strong class="paper-title">“Good Politicians: Experimental Evidence on Motivations for Political Candidacy and Government Performance” (2025)</strong>
+                          <span class="paper-journal">Review of Economic Studies</span>. With Muhammad Yasir Khan.
+                      </div>
+
+                      <div class="paper-item">
+                          <strong class="paper-title">“Inaccurate Forecasting of a Randomized Controlled Trial” (2024)</strong>
+                          <span class="paper-journal">Journal of Experimental Political Science</span>. With Mats Ahrehshop, Miriam Golden, and Luke Sonnet.
+                      </div>
+
+                      <div class="paper-item">
+                          <strong class="paper-title">“Extending the Formal State: The Case of Pakistan’s Frontier Crimes Regulation” (2024)</strong>
+                          <span class="paper-journal">Economica</span>. With Michael Callen, Arman Rezaee, and Jacob Shapiro.
+                      </div>
+
+                      <div class="paper-item">
+                          <strong class="paper-title">“The Political Economy of Public Sector Absence” (2023)</strong>
+                          <span class="paper-journal">Journal of Public Economics</span>. With Michael Callen, Ali Hasanain, Muhammad Yasir Khan, and Arman Rezaee.
+                      </div>
+
+                      <div class="paper-item">
+                          <strong class="paper-title">“Can Campaign Contribution Limits Curb the Influence of Money in Politics?” (2022)</strong>
+                          <span class="paper-journal">American Journal of Political Science</span>, 66(4). With Miguel R. Rueda and Nelson A. Ruiz.
+                      </div>
+
+                      <div class="paper-item">
+                          <strong class="paper-title">“How Campaigns Respond to Ballot Position: A New Mechanism for Order Effects” (2022)</strong>
+                          <span class="paper-journal">Journal of Politics</span>, 84(2). With Thomas S. Robinson and Nelson A. Ruiz.
+                      </div>
+
+                      <div class="paper-item">
+                          <strong class="paper-title">“Information, Candidate Selection, and Quality of Representation: Evidence from Nepal” (2021)</strong>
+                          <span class="paper-journal">Journal of Politics</span>, 83(4). With Zuhad Hai and Binod Kumar Paudel.
+                      </div>
+
+                      <div class="paper-item">
+                          <strong class="paper-title">“Who Enters Politics and Why?” (2021)</strong>
+                          <span class="paper-journal">Annual Review of Political Science</span>.
+                      </div>
+
+                      <div class="paper-item">
+                          <strong class="paper-title">“Does Political Affirmative Action Work, and for Whom? Theory and Evidence on India’s Scheduled Areas” (2020)</strong>
+                          <span class="paper-journal">American Political Science Review</span>, 114(4). With Nicholas Haas and Benjamin Pasquale.
+                      </div>
+
+                      <div class="paper-item">
+                          <strong class="paper-title">“Data and Policy Decisions: Experimental Evidence from Pakistan” (2020)</strong>
+                          <span class="paper-journal">Journal of Development Economics</span>, 146. With Michael Callen, Ali Hasanain, Muhammad Yasir Khan, and Arman Rezaee.
+                      </div>
+
+                      <div class="paper-item">
+                          <strong class="paper-title">“Can Political Alignment be Costly?” (2020)</strong>
+                          <span class="paper-journal">Journal of Politics</span>, 82(2). With Michael Callen and Arman Rezaee.
+                      </div>
+
+                      <div class="paper-item">
+                          <strong class="paper-title">“Political Identity: Experimental Evidence on Anti-Americanism in Pakistan” (2020)</strong>
+                          <span class="paper-journal">Journal of the European Economic Association</span>, 18(5). With Leonardo Bursztyn, Michael Callen, Bruno Ferman, Ali Hasanain & Noam Yuchtman.
+                      </div>
+
+                      <div class="paper-item">
+                          <strong class="paper-title">“Politicians, Bureaucrats, and Development: Evidence from India” (2017)</strong>
+                          <span class="paper-journal">American Political Science Review</span>, 111(1). With Benjamin J. Pasquale.
+                      </div>
+                      
+                      <h4>Working Papers</h4>
+
+                      <div class="paper-item">
+                          <strong class="paper-title">“Random Acts of Kindness? How Gender Shapes Helping Behaviors Around the World”</strong>
+                          <span class="paper-authors">With Salma Mousa. (Under Review)</span>
+                      </div>
+                      
+                      <div class="paper-item">
+                          <strong class="paper-title">“Pessimistic Beliefs of Norms: Descriptive Findings on Women’s Political Participation in Pakistan”</strong>
+                          <span class="paper-authors">With Muhammad Yasir Khan and Luke Sonnet. (Under Review)</span>
+                      </div>
+
+                      <div class="paper-item">
+                          <strong class="paper-title">“Command and Can’t Control: Assessing Centralized Accountability in the Public Sector”</strong>
+                          <span class="paper-authors">With Juan Felipe Ladino, Muhammad Zia Mehmood, and Daniel Rogger. (Under Review)</span>
+                      </div>
+                      
+                      <div class="paper-item">
+                          <strong class="paper-title">“Increasing Polarization of Hindu-Muslim Identity in India”</strong>
+                          <span class="paper-authors">With Feyaad Allie, Viktor Enssle, Tanushree Goyal, and Gufran Pathan. (Under Review)</span>
+                      </div>
+
+                      <div class="paper-item">
+                          <strong class="paper-title">“Pay-to-Play: Campaign Contributions and Kickbacks in Public Procurement”</strong>
+                          <span class="paper-authors">With Juan Felipe Ladino and Juan Felipe Riaño.</span>
+                      </div>
+
+                      <h4>Manuscripts in Progress</h4>
+                      
+                      <div class="paper-item">
+                          <strong class="paper-title">“Does Revolution Work? Post-revolutionary evolution of Nepal’s political classes”</strong>
+                          <span class="paper-authors">With Bishma Bhusal, Michael Callen, Rohini Pande, Soledad Prillaman, and Deepak Singhania.</span>
+                      </div>
+
+                      <div class="paper-item">
+                          <strong class="paper-title">“Mobilizing Women at Scale: Mixed Evidence from a Field Experiment”</strong>
+                          <span class="paper-authors">With Anirvan Chowdhury and Durgesh Pathak.</span>
+                      </div>
+
+                      <h4>Book Chapters</h4>
+                      <div class="paper-item">
+                          <strong class="paper-title">“Studying Sensitive Topics in Fragile Contexts” (2019)</strong>
+                          <span class="paper-journal">Data collection in Fragile States</span>. With Mohammed Isaqzadeh and Jacob Shapiro.
+                      </div>
+                      
+                      <h4>Resting Projects</h4>
+                      <div class="paper-item">
+                          <strong class="paper-title">“Official Attendance Data for Politically Connected Bureaucrats Are Less Accurate”</strong>
+                          <span class="paper-authors">With Michael Callen, Ali Hasanain, and Muhammad Yasir Khan.</span>
+                      </div>
+
+                  </div>
+
+                  <div class="col-lg-6 ps-lg-4">
+                      <h3>Political Economy of Environment</h3>
+                      
+                      <h4>Selected Publications</h4>
+                      
+                      <div class="paper-item">
+                          <strong class="paper-title">“Democracy and the Environment” (forthcoming)</strong>
+                          <span class="paper-journal">Annual Review of Political Science</span>. With Kathryn Baragwanath.
+                      </div>
+
+                      <div class="paper-item">
+                          <strong class="paper-title">“Air pollution could be reduced by incentivizing local government officials to control crop burning“ (2025)</strong>
+                          <span class="paper-journal">Nature: Policy Brief</span>. With Gemma Dipoppa.
+                      </div>
+
+                      <div class="paper-item">
+                          <strong class="paper-title">“Bureaucrat Incentives Reduce Crop Burning and Child Mortality in South Asia“ (2024)</strong>
+                          <span class="paper-journal">Nature</span>. With Gemma Dipoppa.
+                      </div>
+
+                      <div class="paper-item">
+                          <strong class="paper-title">“Representation and Forest Conservation: Evidence from India’s Scheduled Areas” (2024)</strong>
+                          <span class="paper-journal">American Political Science Review</span>. With Apoorva Lal and Benjamin Pasquale.
+                      </div>
+
+                      <h4>Manuscripts in Progress</h4>
+                      
+                      <div class="paper-item">
+                          <strong class="paper-title">“From Paper to Digital: Understanding the Ecological Impacts of India’s Land Records Reform”</strong>
+                          <span class="paper-authors">With Aliz Toth and Anzony Quispe.</span>
+                      </div>
+
+                      <h4>Book Chapters</h4>
+                      <div class="paper-item">
+                          <strong class="paper-title">“Crop Burning” (2025)</strong>
+                          <span class="paper-journal">Unveiling Pakistan’s Air Pollution</span>. With Gemma Dipoppa.
+                      </div>
+
+                  </div>
+
               </div>
             </div>
 
@@ -238,4 +376,43 @@
                       <li class="mb-3"><span class="fa-li"><i class="fa-solid fa-graduation-cap"></i></span><strong>Comparative Politics Field Seminar</strong><br><span class="text-muted">Ph.D. Core Course</span></li>
                   </ul>
                   
-                  <h3 class="mt-5">Previous Teaching
+                  <h3 class="mt-5">Previous Teaching</h3>
+                   <ul class="mt-3 fa-ul">
+                      <li class="mb-3"><span class="fa-li"><i class="fa-solid fa-university"></i></span><strong>Stanford University</strong><br><span class="text-muted">Assistant Professor</span></li>
+                      <li class="mb-3"><span class="fa-li"><i class="fa-solid fa-university"></i></span><strong>Princeton University</strong><br><span class="text-muted">Assistant Professor</span></li>
+                  </ul>
+               </div>
+            </div>
+
+             <div class="tab-pane fade" id="podcasts" role="tabpanel">
+              <div class="mt-4">
+                 <h3 class="mb-4">Media & Audio</h3>
+
+                 <div class="podcast-card">
+                     <div class="play-btn"><i class="fa-regular fa-circle-play"></i></div>
+                     <div>
+                         <h5 class="mb-1"><strong>Nature Podcast</strong></h5>
+                         <p class="mb-0 text-muted">Discussion on crop burning and bureaucrat incentives in South Asia.</p>
+                         <a href="https://www.nature.com/nature/volumes/632/issues/8024/audio" class="small text-primary stretched-link">Listen to Episode</a>
+                     </div>
+                 </div>
+
+                 <div class="podcast-card">
+                     <div class="play-btn"><i class="fa-regular fa-circle-play"></i></div>
+                     <div>
+                         <h5 class="mb-1"><strong>VoxDev</strong></h5>
+                         <p class="mb-0 text-muted">Politics and public service delivery.</p>
+                         <a href="https://voxdev.org/" class="small text-primary stretched-link">Listen to Episode</a>
+                     </div>
+                 </div>
+
+              </div>
+           </div>
+
+          </div> </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
