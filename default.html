@@ -3,35 +3,39 @@
 <head>
     <title>{{ page.title }} | {{ site.title }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-    <div class="sidebar">
-        <img src="/assets/images/profile.jpg" alt="Saad Gulzar" class="profile-photo">
-        
-        <h2>Saad Gulzar</h2>
-        <p>
-            Associate Professor<br>
-            Political Science & Economics<br>
-            <strong>University of Notre Dame</strong>
-        </p>
-        
-        <ul class="nav-links">
-            <li><a href="/">Home</a></li>
-            <li><a href="/research">Research</a></li>
-            <li><a href="/teaching">Teaching</a></li>
-            <li><a href="https://scholar.google.com/citations?user=ExampleID">Google Scholar</a></li>
-            <li><a href="/assets/cv.pdf">CV (PDF)</a></li>
-        </ul>
+    <div class="hero-banner"></div>
 
-        <p style="font-size: 0.8em; margin-top: 40px; color: #999;">
-            Contact:<br>
-            sgulzar@nd.edu
-        </p>
+    <div class="profile-card">
+        <img src="{{ site.baseurl }}/assets/images/profile.jpg" alt="Profile Photo" class="profile-photo">
+        
+        <div class="profile-info">
+            <h1>Saad Gulzar</h1>
+            <p><strong>Associate Professor of Political Science</strong></p>
+            <p>University of Notre Dame</p>
+            <br>
+            <p style="font-size: 0.9em; max-width: 400px; font-style: italic;">
+                "I study state capacity, political economy, and development in South Asia."
+            </p>
+            <p style="margin-top: 15px;">
+                <a href="{{ site.baseurl }}/assets/cv.pdf"><i class="fas fa-file-pdf"></i> CV</a> &nbsp;
+                <a href="mailto:sgulzar@nd.edu"><i class="fas fa-envelope"></i> Email</a>
+            </p>
+        </div>
     </div>
 
-    <div class="content">
+    <div class="nav-bar">
+        <a href="{{ site.baseurl }}/">Home</a>
+        <a href="{{ site.baseurl }}/research">Research</a>
+        <a href="{{ site.baseurl }}/teaching">Teaching</a>
+        <a href="https://scholar.google.com">Google Scholar</a>
+    </div>
+
+    <div class="main-container">
         {{ content }}
     </div>
 

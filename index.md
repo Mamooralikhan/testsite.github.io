@@ -3,14 +3,38 @@ layout: default
 title: Home
 ---
 
-# About Me
+<div>
+    <h3>Political Economy & Development</h3>
+    <p><strong>Book</strong></p>
+    <p>
+        <img src="https://placehold.co/100x140?text=Book+Cover" align="left" style="margin-right:15px; border:1px solid #ddd;">
+        <em>Bureaucrats, Politicians, and Development.</em><br>
+        Currently working on this manuscript focusing on state capacity in Pakistan.
+    </p>
+    <br clear="all">
+    
+    <p><strong>Selected Articles</strong></p>
+    <ul style="padding-left: 20px;">
+        <li>"Bureaucrat Incentives Reduce Crop Burning" (Nature, 2024).</li>
+        <li>"Personalities and Public Sector Performance" (EDCC, 2025).</li>
+        <li>"Can Party Elites Shape the Rank-and-File?" (APSR, 2025).</li>
+    </ul>
+</div>
 
-I am an Associate Professor of Political Science and Global Affairs and Associate Professor of Economics (concurrent) at the **University of Notre Dame**.
-
-My research interests lie in political economy, comparative politics, development, and environmental governance and conservation, with a regional focus on South Asia, including Pakistan, India, and Nepal.
-
-Governments profoundly shape people's daily lives, serving as the most immediate and powerful force behind their well-being and opportunities. I study how staffing and incentives of bureaucrats and politicians in government organizations shape the implementation of social programs, the provision of public goods, and the management of political campaigns at scale. My most recent work extends this inquiry to the study of environmental governance and conservation.
-
-### Education & Experience
-* **Ph.D. in Politics**, New York University (2017)
-* Previously Assistant Professor at **Stanford University** and **Princeton University**.
+<div>
+    <h3>Environmental Governance</h3>
+    <p>
+        My recent work extends my inquiry of state capacity to the study of environmental governance and conservation.
+    </p>
+    
+    <p><strong>Recent Papers</strong></p>
+    <p>"Air pollution could be reduced by incentivizing local government officials" (Nature Policy Brief, 2025).</p>
+    
+    <hr>
+    
+    <h3>Affiliations</h3>
+    <p>
+        <strong>Kellogg Institute</strong><br>
+        Research Manager, Latin America & South Asia
+    </p>
+</div>

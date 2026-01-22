@@ -1,63 +1,75 @@
-/* GLOBAL STYLES */
 body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #fff;
     margin: 0;
-    display: flex;
-    min-height: 100vh;
     color: #333;
-    line-height: 1.6;
 }
 
-a { color: #00457c; text-decoration: none; } /* Notre Dame Blue */
+a { color: #00629B; text-decoration: none; } /* Notre Dame Blue */
 a:hover { text-decoration: underline; }
 
-/* LEFT SIDEBAR */
-.sidebar {
-    width: 260px;
-    background-color: #f9f9f9; /* Light grey background */
-    padding: 40px;
-    position: fixed;
-    height: 100%;
-    border-right: 1px solid #eee;
-    overflow-y: auto;
+/* 1. THE TOP BANNER IMAGE */
+.hero-banner {
+    width: 100%;
+    height: 350px;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/b/b8/Notre_Dame_Main_Building_Golden_Dome.jpg'); /* Placeholder: Notre Dame Campus */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+/* 2. THE FLOATING PROFILE CARD */
+.profile-card {
+    background: white;
+    width: 80%;
+    max-width: 900px;
+    margin: -100px auto 40px; /* Pulls the card UP into the banner */
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Subtle shadow */
+    border-radius: 4px;
+    display: flex; /* Puts photo next to text */
+    align-items: center;
+    gap: 30px;
+    position: relative;
 }
 
 .profile-photo {
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
+    width: 180px;
+    height: 180px;
+    border-radius: 5px; /* Square with rounded corners like Graeme's */
     object-fit: cover;
-    margin-bottom: 20px;
-    border: 3px solid #fff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.sidebar h2 { font-size: 1.4em; margin-bottom: 5px; }
-.sidebar p { font-size: 0.9em; color: #666; margin-top: 0; }
+.profile-info h1 { margin: 0 0 10px 0; font-size: 2.2em; }
+.profile-info p { margin: 5px 0; color: #555; }
 
-.nav-links { list-style: none; padding: 0; margin-top: 30px; }
-.nav-links li { margin-bottom: 12px; }
-.nav-links a { 
-    font-weight: 500; 
-    color: #444; 
-    font-size: 1.05em; 
-    display: block;
+/* 3. NAVIGATION BAR */
+.nav-bar {
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 40px;
 }
-.nav-links a:hover { color: #00457c; }
-
-/* RIGHT CONTENT */
-.content {
-    margin-left: 340px; /* Pushes content right */
-    padding: 60px 80px;
-    max-width: 800px;
+.nav-bar a {
+    margin: 0 15px;
+    font-weight: bold;
+    color: #555;
+    text-transform: uppercase;
+    font-size: 0.9em;
 }
 
-h1 { font-size: 2em; margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
-h3 { margin-top: 30px; font-weight: 600; }
+/* 4. TWO COLUMN LAYOUT */
+.main-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 50px;
+    padding: 0 20px 60px;
+}
 
-/* MOBILE RESPONSIVE */
+/* Mobile responsive */
 @media (max-width: 768px) {
-    body { flex-direction: column; }
-    .sidebar { width: 100%; position: relative; height: auto; padding: 20px; box-sizing: border-box;}
-    .content { margin-left: 0; padding: 20px; }
+    .profile-card { flex-direction: column; text-align: center; margin-top: -50px;}
+    .main-container { grid-template-columns: 1fr; } /* Stack columns on phone */
 }
