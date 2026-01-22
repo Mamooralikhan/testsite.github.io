@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Saad Gulzar - University of Notre Dame</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/c353c259e6.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/academicons.min.css">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      body { font-family: 'Lato', sans-serif !important; color: #333; background-color: #fff; }
+      
+      /* Typography */
+      h1, h2, h3, h5, .nav-item { font-family: 'Merriweather', serif !important; }
+      h1 { font-size: 22pt; font-weight: 400; margin-bottom: 5px; }
+      
+      /* Links */
+      a { color: #5f9fb8; text-decoration: none; }
+      a:hover { color: #3a7ca5; text-decoration: underline; }
+      
+      /* Top Banner (Jumbotron) */
+      .jumbotron {
+        min-height: 380px;
+        padding-top: 60px;
+        padding-bottom: 60px;
+        background-size: cover;
+        background-position: center;
+        /* Gradient overlay so text is readable */
+        background-image: linear-gradient(to bottom, rgba(255,255,255,0.85) 0%,rgba(255,255,255,0.6) 100%), url('img/banner.jpg');
+        margin-bottom: 30px;
+      }
+
+      /* Profile Card styling */
+      .profile-img { border-radius: 5px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+      .icon-row a { margin-right: 15px; font-size: 1.1em; color: #555; }
+      .icon-row a:hover { color: #5f9fb8; }
+
+      /* Tabs Styling */
+      .nav-tabs { border-bottom: 1px solid #ddd; margin-bottom: 40px; }
+      .nav-link { color: #777; font-size: 1.1em; border: none; padding-bottom: 15px; }
+      .nav-link.active { color: #000 !important; font-weight: bold; border-bottom: 3px solid #5f9fb8; background: none; }
+      .nav-link:hover { border-color: transparent; color: #5f9fb8; }
+
+      /* Paper List Styling */
+      .paper-title { font-size: 1.05em; margin-bottom: 5px; line-height: 1.5; }
+      .paper-journal { font-style: italic; color: #555; }
+      .paper-links { font-size: 0.9em; margin-top: 2px; margin-bottom: 25px; }
+      .paper-links a { margin-right: 15px; color: #5f9fb8; }
+      .paper-links i { margin-right: 4px; }
+      
+      /* Abstract Box */
+      .abstract-box {
+        background: #f8f9fa;
+        padding: 15px;
+        border-radius: 5px;
+        font-size: 0.95em;
+        color: #444;
+        margin-bottom: 20px;
+        border-left: 4px solid #5f9fb8;
+      }
+    </style>
+  </head>
+  
+  <body>
+
+    <div class="jumbotron d-flex align-items-center">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="row align-items-center">
+              
+              <div class="col-md-3 text-center mb-4 mb-md-0">
+                  <img src="img/profile.jpg" class="img-fluid profile-img" alt="Saad Gulzar">
+              </div>
+              
+              <div class="col-md-9">
+                <h1>Saad Gulzar</h1>
+                <h5 style="font-weight: 300; line-height: 1.4; color: #444;">
+                  Associate Professor of Political Science & Economics<br>
+                  University of Notre Dame
+                </h5>
+                
+                <div class="icon-row mt-3 mb-3">
+                  <a href="assets/cv.pdf"><i class="ai ai-cv ai-lg"></i> CV</a>
+                  <a href="https://scholar.google.com/citations?user=ExampleID"><i class="ai ai-google-scholar ai-lg"></i> Google Scholar</a>
+                  <a href="mailto:sgulzar@nd.edu"><i class="fa-solid fa-envelope"></i> Email</a>
+                  <a href="https://github.com/saadgulzar"><i class="fa-brands fa-github"></i> GitHub</a>
+                </div>
+                
+                <p class="text-muted" style="font-size: 1.05em; line-height: 1.6;">
+                  I study political economy, development, and environmental governance, with a regional focus on South Asia. My research examines how the staffing and incentives of bureaucrats and politicians shape the implementation of social programs and public goods.
+                </p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          
+          <ul class="nav nav-tabs justify-content-center" id="mainNav" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" id="research-tab" data-bs-toggle="tab" href="#research" role="tab"><i class="fa-solid fa-book"></i> Writing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="teaching-tab" data-bs-toggle="tab" href="#teaching" role="tab"><i class="fa-solid fa-chalkboard-user"></i> Teaching</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="advising-tab" data-bs-toggle="tab" href="#advising" role="tab"><i class="fa-solid fa-users"></i> Advising</a>
+            </li>
+          </ul>
+
+          <div class="tab-content" id="nav-tabContent">
+            
+            <div class="tab-pane fade show active" id="research" role="tabpanel">
+              
+              <h3 class="mb-4 mt-4">Selected Publications</h3>
+
+              <div class="mb-4">
+                <div class="paper-title">
+                  <strong>“Bureaucrat Incentives Reduce Crop Burning and Child Mortality in South Asia”</strong>
+                  <br><span class="paper-journal">Nature (2024)</span>. With Gemma Dipoppa.
+                </div>
+                <div class="paper-links">
+                  <a href="#"><i class="far fa-file-pdf"></i> PDF</a>
+                  <a href="#" data-bs-toggle="collapse" data-bs-target="#abs1"><i class="far fa-arrow-alt-circle-down"></i> Abstract</a>
+                </div>
+                <div class="collapse" id="abs1">
+                  <div class="abstract-box">
+                    We show that crop burning responds to bureaucrats' incentives: fires increase by 15% when wind is most likely to direct pollution to neighboring jurisdictions and decreases by 14.5% when it pollutes their own.
+                  </div>
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <div class="paper-title">
+                  <strong>“Can Party Elites Shape the Rank-and-File? Evidence from a Recruitment Experiment in India”</strong>
+                  <br><span class="paper-journal">American Political Science Review (2025)</span>. With Durgesh Pathak, Sarah Thompson, and Aliz Toth.
+                </div>
+                <div class="paper-links">
+                  <a href="#"><i class="far fa-file-pdf"></i> PDF</a>
+                  <a href="#" data-bs-toggle="collapse" data-bs-target="#abs2"><i class="far fa-arrow-alt-circle-down"></i> Abstract</a>
+                </div>
+                <div class="collapse" id="abs2">
+                  <div class="abstract-box">
+                    We analyze a field experiment conducted by an Indian party that randomized recruitment messages. Contrary to concerns that parties can only attract a few poor-quality volunteers, we show that elite efforts can shape the rank-and-file.
+                  </div>
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <div class="paper-title">
+                  <strong>“Personalities and Public Sector Performance: Evidence from a Health Experiment in Pakistan”</strong>
+                  <br><span class="paper-journal">Economic Development and Cultural Change (2025)</span>. With Michael Callen, Ali Hasanain, et al.
+                </div>
+                <div class="paper-links">
+                  <a href="#"><i class="far fa-file-pdf"></i> PDF</a>
+                </div>
+              </div>
+
+              <hr class="my-5">
+
+              <h3 class="mb-4">Working Papers</h3>
+              
+              <div class="mb-4">
+                <div class="paper-title">
+                    <strong>“Random Acts of Kindness? How Gender Shapes Helping Behaviors Around the World”</strong>
+                    <br>With Salma Mousa. <i>(Under Review)</i>
+                </div>
+                <div class="paper-links">
+                    <a href="#"><i class="far fa-file-pdf"></i> Draft</a>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="tab-pane fade" id="teaching" role="tabpanel">
+               <div class="mt-4">
+                  <h3>Courses at Notre Dame</h3>
+                  <ul class="mt-3">
+                      <li class="mb-2"><strong>Political Economy of Development</strong> (Undergraduate)</li>
+                      <li class="mb-2"><strong>Comparative Politics Field Seminar</strong> (Ph.D.)</li>
+                      <li class="mb-2"><strong>Bureaucracy and Public Policy</strong></li>
+                  </ul>
+                  
+                  <h3 class="mt-5">Previous Teaching</h3>
+                  <ul class="mt-3">
+                      <li class="mb-2">Experimental Design (Stanford University)</li>
+                      <li class="mb-2">Political Development (Princeton University)</li>
+                  </ul>
+               </div>
+            </div>
+
+             <div class="tab-pane fade" id="advising" role="tabpanel">
+              <div class="mt-4">
+                 <h3>Graduate Advising</h3>
+                 <p>I advise graduate students in the political science and economics Ph.D. programs at Notre Dame. My students have gone on to positions at...</p>
+                 
+                 <h3 class="mt-5">Office Hours</h3>
+                 <p>Please email me to schedule an appointment.</p>
+              </div>
+           </div>
+
+          </div> </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
