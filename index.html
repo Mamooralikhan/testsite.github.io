@@ -11,7 +11,6 @@
     
     <script src="https://kit.fontawesome.com/c353c259e6.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/academicons.min.css">
-    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
@@ -21,29 +20,17 @@
       h1, h2, h3, h4, h5 { font-family: 'Playfair Display', serif !important; }
       h1 { font-size: 26pt; font-weight: 700; margin-bottom: 5px; color: #111; letter-spacing: -0.5px; }
       
-      /* Theme Headers */
-      .theme-header {
-          font-size: 1.8em;
-          font-weight: 700;
-          color: #002b5c;
-          border-bottom: 2px solid #c99700;
-          padding-bottom: 10px;
-          margin-top: 50px;
-          margin-bottom: 20px;
-      }
-
-      /* LINKS */
       a { color: #00457c; text-decoration: none; transition: color 0.2s; }
       a:hover { color: #c99700; }
       
-      /* BANNER & BOX */
+      /* BANNER */
       .banner-section {
         background-image: url('img/banner.jpg'); 
         background-size: cover;
         background-position: center;
         padding-top: 70px;
         padding-bottom: 70px;
-        margin-bottom: 50px;
+        margin-bottom: 40px;
       }
 
       .profile-box {
@@ -61,13 +48,7 @@
       .icon-row { font-size: 1em; color: #666; margin-top: 20px; }
       .icon-row a { margin-right: 18px; color: #00457c; font-weight: 600; }
       
-      .blurb-text {
-          font-size: 1.15em;
-          line-height: 1.7;
-          color: #444;
-          font-family: 'Playfair Display', serif;
-          font-style: italic;
-      }
+      .blurb-text { font-size: 1.15em; line-height: 1.7; color: #444; font-family: 'Playfair Display', serif; font-style: italic; }
       @media (min-width: 768px) { .blurb-text { padding-left: 30px; border-left: 1px solid #ddd; } }
 
       /* TABS */
@@ -75,75 +56,53 @@
       .nav-link { color: #888; font-size: 1.2em; border: none; padding-bottom: 12px; margin-right: 30px; background: none; }
       .nav-link.active { color: #002b5c !important; font-weight: 700; border-bottom: 3px solid #c99700; background: none; }
       
-      /* FILTER BUTTONS (Mini Pills) */
-      .filter-bar { margin-bottom: 25px; }
-      .filter-btn {
-          border: 1px solid #eee;
+      /* === FILTER SYSTEM === */
+      .filter-container { margin-bottom: 40px; text-align: center; }
+      
+      /* Theme Buttons (Level 1) */
+      .theme-btn {
+          border: 1px solid #002b5c;
           background: #fff;
+          color: #002b5c;
+          padding: 8px 18px;
+          border-radius: 2px;
+          margin: 0 5px 10px 0;
+          font-size: 0.95em;
+          font-weight: 600;
+          transition: all 0.2s;
+          cursor: pointer;
+      }
+      .theme-btn:hover { background: #f0f4f8; }
+      .theme-btn.active { background-color: #002b5c; color: #fff; }
+
+      /* Region Buttons (Level 2) */
+      .region-bar { margin-top: 15px; border-top: 1px solid #eee; padding-top: 15px; }
+      .region-btn {
+          border: none;
+          background: #f4f4f4;
           color: #666;
-          padding: 4px 12px;
+          padding: 5px 14px;
           border-radius: 15px;
           font-size: 0.85em;
-          margin-right: 6px;
+          margin: 0 4px;
           transition: all 0.2s;
           cursor: pointer;
           text-transform: uppercase;
           letter-spacing: 0.5px;
       }
-      .filter-btn:hover { background: #f0f0f0; }
-      .filter-btn.active { background-color: #002b5c; color: #fff; border-color: #002b5c; }
+      .region-btn:hover { background: #ddd; color: #333; }
+      .region-btn.active { background-color: #c99700; color: #fff; }
 
-      /* PAPER ITEM STYLING (The requested format) */
-      .paper-item { margin-bottom: 30px; }
-      
-      .paper-title { 
-          font-family: 'Lato', sans-serif; /* "Simple" */
-          font-size: 1.1em; 
-          color: #222; 
-          display: block;
-          line-height: 1.4;
-      }
-      
-      .paper-journal { 
-          font-family: 'Playfair Display', serif;
-          font-weight: 700; /* Bold */
-          font-size: 0.95em; /* Smaller than title */
-          color: #002b5c;
-          margin-top: 2px;
-      }
-      
-      .paper-authors { 
-          font-size: 0.95em; 
-          color: #666; /* Not bold */
-          margin-top: 2px;
-      }
-      
-      /* Expand Button */
-      .expand-trigger {
-          display: inline-block;
-          margin-top: 5px;
-          font-size: 0.85em;
-          color: #c99700;
-          cursor: pointer;
-          font-weight: 600;
-          text-transform: uppercase;
-      }
+      /* PAPER ITEM */
+      .paper-item { margin-bottom: 25px; padding-bottom: 20px; border-bottom: 1px solid #eee; display: block; }
+      .paper-title { font-family: 'Lato', sans-serif; font-size: 1.1em; color: #222; display: block; line-height: 1.4; }
+      .paper-journal { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 0.95em; color: #002b5c; margin-top: 3px; }
+      .paper-authors { font-size: 0.95em; color: #666; margin-top: 2px; }
+      .expand-trigger { display: inline-block; margin-top: 6px; font-size: 0.85em; color: #c99700; cursor: pointer; font-weight: 600; text-transform: uppercase; }
       .expand-trigger:hover { text-decoration: underline; }
-      
-      /* Hidden Box */
-      .abstract-box {
-          margin-top: 10px;
-          background: #f9f9f9;
-          padding: 15px;
-          border-left: 3px solid #002b5c;
-          font-size: 0.9em;
-      }
-      .btn-download {
-          background-color: #fff; border: 1px solid #ccc; padding: 3px 8px; 
-          font-size: 0.8em; border-radius: 3px; margin-right: 10px; color: #333;
-      }
+      .abstract-box { margin-top: 10px; background: #f9f9f9; padding: 15px; border-left: 3px solid #002b5c; font-size: 0.9em; }
+      .btn-download { background-color: #fff; border: 1px solid #ccc; padding: 3px 8px; font-size: 0.8em; border-radius: 3px; margin-right: 10px; color: #333; }
       .btn-download:hover { background: #002b5c; color: white; }
-
     </style>
   </head>
   
@@ -190,248 +149,121 @@
             
             <div class="tab-pane fade show active" id="research" role="tabpanel">
               
-              <h3 class="theme-header">Environment & Climate</h3>
-              
-              <div class="filter-bar" id="filter-env">
-                  <button class="filter-btn active" onclick="filterGroup('env', 'all', this)">All</button>
-                  <button class="filter-btn" onclick="filterGroup('env', 'sa', this)">South Asia</button>
-                  <button class="filter-btn" onclick="filterGroup('env', 'india', this)">India</button>
-                  <button class="filter-btn" onclick="filterGroup('env', 'pak', this)">Pakistan</button>
-                  <button class="filter-btn" onclick="filterGroup('env', 'global', this)">Global</button>
+              <div class="filter-container">
+                  <div>
+                      <button class="theme-btn active" onclick="setTheme('all', this)">All Research</button>
+                      <button class="theme-btn" onclick="setTheme('env', this)">Environment</button>
+                      <button class="theme-btn" onclick="setTheme('elec', this)">Elections</button>
+                      <button class="theme-btn" onclick="setTheme('bur', this)">Bureaucracy</button>
+                      <button class="theme-btn" onclick="setTheme('id', this)">Identity</button>
+                      <button class="theme-btn" onclick="setTheme('meth', this)">Methodology</button>
+                  </div>
+                  
+                  <div class="region-bar">
+                      <span style="font-size:0.85em; color:#888; margin-right:10px; text-transform:uppercase;">Filter by Region:</span>
+                      <button class="region-btn active" onclick="setRegion('all', this)">All</button>
+                      <button class="region-btn" onclick="setRegion('pak', this)">Pakistan</button>
+                      <button class="region-btn" onclick="setRegion('india', this)">India</button>
+                      <button class="region-btn" onclick="setRegion('sa', this)">South Asia</button>
+                      <button class="region-btn" onclick="setRegion('global', this)">Global</button>
+                  </div>
               </div>
 
-              <div id="list-env">
-                  <div class="paper-item tag-sa tag-pak">
+              <div id="paper-list">
+
+                  <div class="paper-item theme-env region-sa region-pak">
                       <div class="paper-title">Air pollution could be reduced by incentivizing local government officials to control crop burning (2025)</div>
                       <div class="paper-journal">Nature: Policy Brief</div>
                       <div class="paper-authors">With Gemma Dipoppa.</div>
-                      <div class="expand-trigger" data-bs-toggle="collapse" data-bs-target="#env1">Abstract & PDF <i class="fas fa-caret-down"></i></div>
-                      <div class="collapse abstract-box" id="env1">
+                      <div class="expand-trigger" data-bs-toggle="collapse" data-bs-target="#p18">Abstract & PDF <i class="fas fa-caret-down"></i></div>
+                      <div class="collapse abstract-box" id="p18">
                           <div class="mb-2"><a href="#" class="btn-download"><i class="far fa-file-pdf"></i> Download PDF</a></div>
                           <p>Bureaucratic action to punish farmers deters future fires by a further 13%. Thus, using administrator incentives to control crop burning could guide policy.</p>
                       </div>
                   </div>
 
-                  <div class="paper-item tag-sa">
+                  <div class="paper-item theme-env region-sa region-pak">
                       <div class="paper-title">Bureaucrat Incentives Reduce Crop Burning and Child Mortality in South Asia (2024)</div>
                       <div class="paper-journal">Nature</div>
                       <div class="paper-authors">With Gemma Dipoppa.</div>
-                      <div class="expand-trigger" data-bs-toggle="collapse" data-bs-target="#env2">Abstract & PDF <i class="fas fa-caret-down"></i></div>
-                      <div class="collapse abstract-box" id="env2">
+                      <div class="expand-trigger" data-bs-toggle="collapse" data-bs-target="#p14">Abstract & PDF <i class="fas fa-caret-down"></i></div>
+                      <div class="collapse abstract-box" id="p14">
                           <div class="mb-2"><a href="#" class="btn-download"><i class="far fa-file-pdf"></i> Download PDF</a></div>
                           <p>We show that crop burning responds to bureaucrats' incentives: fires increase by 15% when wind is most likely to direct pollution to neighboring jurisdictions.</p>
                       </div>
                   </div>
 
-                  <div class="paper-item tag-india">
+                  <div class="paper-item theme-env region-india">
                       <div class="paper-title">Representation and Forest Conservation: Evidence from India’s Scheduled Areas (2024)</div>
                       <div class="paper-journal">American Political Science Review</div>
                       <div class="paper-authors">With Apoorva Lal and Benjamin Pasquale.</div>
-                      <div class="expand-trigger" data-bs-toggle="collapse" data-bs-target="#env3">Abstract & PDF <i class="fas fa-caret-down"></i></div>
-                      <div class="collapse abstract-box" id="env3">
+                      <div class="expand-trigger" data-bs-toggle="collapse" data-bs-target="#p11">Abstract & PDF <i class="fas fa-caret-down"></i></div>
+                      <div class="collapse abstract-box" id="p11">
                           <div class="mb-2"><a href="#" class="btn-download"><i class="far fa-file-pdf"></i> Download PDF</a></div>
                           <p>We study a 1996 law that created local government councils with mandated representation for India's Scheduled Tribes.</p>
                       </div>
                   </div>
 
-                  <div class="paper-item tag-global">
-                      <div class="paper-title">Democracy and the Environment (Forthcoming)</div>
-                      <div class="paper-journal">Annual Review of Political Science</div>
-                      <div class="paper-authors">With Kathryn Baragwanath.</div>
-                      <div class="expand-trigger" data-bs-toggle="collapse" data-bs-target="#env4">Abstract & PDF <i class="fas fa-caret-down"></i></div>
-                      <div class="collapse abstract-box" id="env4">
-                          <div class="mb-2"><a href="#" class="btn-download"><i class="far fa-file-pdf"></i> Download PDF</a></div>
-                          <p>We survey research on the relationship between democracy and the environment.</p>
-                      </div>
-                  </div>
-              </div>
-
-
-              <h3 class="theme-header">Elections & Representation</h3>
-              
-              <div class="filter-bar" id="filter-elec">
-                  <button class="filter-btn active" onclick="filterGroup('elec', 'all', this)">All</button>
-                  <button class="filter-btn" onclick="filterGroup('elec', 'india', this)">India</button>
-                  <button class="filter-btn" onclick="filterGroup('elec', 'pak', this)">Pakistan</button>
-                  <button class="filter-btn" onclick="filterGroup('elec', 'nepal', this)">Nepal</button>
-                  <button class="filter-btn" onclick="filterGroup('elec', 'col', this)">Colombia</button>
-                  <button class="filter-btn" onclick="filterGroup('elec', 'global', this)">Global</button>
-              </div>
-
-              <div id="list-elec">
-                  <div class="paper-item tag-india">
+                  <div class="paper-item theme-elec region-india">
                       <div class="paper-title">Can Party Elites Shape the Rank-and-File? Evidence from a Recruitment Experiment in India (2025)</div>
                       <div class="paper-journal">American Political Science Review</div>
                       <div class="paper-authors">With Durgesh Pathak, Sarah Thompson, and Aliz Toth.</div>
-                      <div class="expand-trigger" data-bs-toggle="collapse" data-bs-target="#elec1">Abstract & PDF <i class="fas fa-caret-down"></i></div>
-                      <div class="collapse abstract-box" id="elec1">
+                      <div class="expand-trigger" data-bs-toggle="collapse" data-bs-target="#p17">Abstract & PDF <i class="fas fa-caret-down"></i></div>
+                      <div class="collapse abstract-box" id="p17">
                           <div class="mb-2"><a href="#" class="btn-download"><i class="far fa-file-pdf"></i> Download PDF</a></div>
-                          <p>We show that elite efforts can shape the rank-and-file.</p>
+                          <p>We show that elite efforts can shape the rank-and-file recruitment process.</p>
                       </div>
                   </div>
 
-                  <div class="paper-item tag-pak">
+                  <div class="paper-item theme-elec region-pak">
                       <div class="paper-title">Good Politicians: Experimental Evidence on Motivations for Political Candidacy (2025)</div>
                       <div class="paper-journal">Review of Economic Studies</div>
                       <div class="paper-authors">With Muhammad Yasir Khan.</div>
-                      <div class="expand-trigger" data-bs-toggle="collapse" data-bs-target="#elec2">Abstract & PDF <i class="fas fa-caret-down"></i></div>
-                      <div class="collapse abstract-box" id="elec2">
+                      <div class="expand-trigger" data-bs-toggle="collapse" data-bs-target="#p15">Abstract & PDF <i class="fas fa-caret-down"></i></div>
+                      <div class="collapse abstract-box" id="p15">
                           <div class="mb-2"><a href="#" class="btn-download"><i class="far fa-file-pdf"></i> Download PDF</a></div>
                           <p>How can we motivate good politicians to enter politics?</p>
                       </div>
                   </div>
 
-                  <div class="paper-item tag-pak">
-                      <div class="paper-title">Political Responsiveness, Information Provision, and Capacity Gaps (Forthcoming)</div>
-                      <div class="paper-journal">Comparative Political Studies</div>
-                      <div class="paper-authors">With Miriam Golden and Luke Sonnet.</div>
-                      <div class="expand-trigger" data-bs-toggle="collapse" data-bs-target="#elec3">Abstract & PDF <i class="fas fa-caret-down"></i></div>
-                      <div class="collapse abstract-box" id="elec3">
-                          <div class="mb-2"><a href="#" class="btn-download"><i class="far fa-file-pdf"></i> Download PDF</a></div>
-                          <p>We investigate whether lack of information is one reason politicians may be unresponsive.</p>
-                      </div>
-                  </div>
-
-                  <div class="paper-item tag-col">
-                      <div class="paper-title">Can Campaign Contribution Limits Curb the Influence of Money in Politics? (2022)</div>
-                      <div class="paper-journal">American Journal of Political Science</div>
-                      <div class="paper-authors">With Miguel R. Rueda and Nelson A. Ruiz.</div>
-                      <div class="expand-trigger" data-bs-toggle="collapse" data-bs-target="#elec4">Abstract & PDF <i class="fas fa-caret-down"></i></div>
-                      <div class="collapse abstract-box" id="elec4">
-                          <div class="mb-2"><a href="#" class="btn-download"><i class="far fa-file-pdf"></i> Download PDF</a></div>
-                          <p>Using a regression discontinuity design in Colombia.</p>
-                      </div>
-                  </div>
-
-                  <div class="paper-item tag-nepal">
-                      <div class="paper-title">Information, Candidate Selection, and Quality of Representation: Evidence from Nepal (2021)</div>
-                      <div class="paper-journal">Journal of Politics</div>
-                      <div class="paper-authors">With Zuhad Hai and Binod Kumar Paudel.</div>
-                      <div class="expand-trigger" data-bs-toggle="collapse" data-bs-target="#elec5">Abstract & PDF <i class="fas fa-caret-down"></i></div>
-                      <div class="collapse abstract-box" id="elec5">
-                          <div class="mb-2"><a href="#" class="btn-download"><i class="far fa-file-pdf"></i> Download PDF</a></div>
-                          <p>This paper studies candidate selection by party leaders.</p>
-                      </div>
-                  </div>
-
-                  <div class="paper-item tag-global">
-                      <div class="paper-title">Who Enters Politics and Why? (2021)</div>
-                      <div class="paper-journal">Annual Review of Political Science</div>
-                      <div class="expand-trigger" data-bs-toggle="collapse" data-bs-target="#elec6">Abstract & PDF <i class="fas fa-caret-down"></i></div>
-                      <div class="collapse abstract-box" id="elec6">
-                          <div class="mb-2"><a href="#" class="btn-download"><i class="far fa-file-pdf"></i> Download PDF</a></div>
-                          <p>This survey presents conceptual issues in measuring political entry.</p>
-                      </div>
-                  </div>
-              </div>
-
-
-              <h3 class="theme-header">Bureaucracy & State Effectiveness</h3>
-              
-              <div class="filter-bar" id="filter-bur">
-                  <button class="filter-btn active" onclick="filterGroup('bur', 'all', this)">All</button>
-                  <button class="filter-btn" onclick="filterGroup('bur', 'pak', this)">Pakistan</button>
-                  <button class="filter-btn" onclick="filterGroup('bur', 'india', this)">India</button>
-              </div>
-
-              <div id="list-bur">
-                  <div class="paper-item tag-pak">
+                  <div class="paper-item theme-bur region-pak">
                       <div class="paper-title">Personalities and Public Sector Performance: Evidence from a Health Experiment in Pakistan (2025)</div>
                       <div class="paper-journal">Economic Development and Cultural Change</div>
                       <div class="paper-authors">With Michael Callen et al.</div>
-                      <div class="expand-trigger" data-bs-toggle="collapse" data-bs-target="#bur1">Abstract & PDF <i class="fas fa-caret-down"></i></div>
-                      <div class="collapse abstract-box" id="bur1">
+                      <div class="expand-trigger" data-bs-toggle="collapse" data-bs-target="#p16">Abstract & PDF <i class="fas fa-caret-down"></i></div>
+                      <div class="collapse abstract-box" id="p16">
                           <div class="mb-2"><a href="#" class="btn-download"><i class="far fa-file-pdf"></i> Download PDF</a></div>
-                          <p>This paper provides evidence that the personalities of policymakers matter.</p>
+                          <p>Evidence that the personalities of policymakers matter for policy outcomes.</p>
                       </div>
                   </div>
 
-                  <div class="paper-item tag-pak">
-                      <div class="paper-title">The Political Economy of Public Sector Absence (2023)</div>
-                      <div class="paper-journal">Journal of Public Economics</div>
-                      <div class="paper-authors">With Michael Callen, Ali Hasanain, et al.</div>
-                      <div class="expand-trigger" data-bs-toggle="collapse" data-bs-target="#bur2">Abstract & PDF <i class="fas fa-caret-down"></i></div>
-                      <div class="collapse abstract-box" id="bur2">
-                          <div class="mb-2"><a href="#" class="btn-download"><i class="far fa-file-pdf"></i> Download PDF</a></div>
-                          <p>The paper examines how politics relates to public sector absenteeism.</p>
-                      </div>
-                  </div>
-
-                  <div class="paper-item tag-india">
-                      <div class="paper-title">Politicians, Bureaucrats, and Development: Evidence from India (2017)</div>
-                      <div class="paper-journal">American Political Science Review</div>
-                      <div class="paper-authors">With Benjamin J. Pasquale.</div>
-                      <div class="expand-trigger" data-bs-toggle="collapse" data-bs-target="#bur3">Abstract & PDF <i class="fas fa-caret-down"></i></div>
-                      <div class="collapse abstract-box" id="bur3">
-                          <div class="mb-2"><a href="#" class="btn-download"><i class="far fa-file-pdf"></i> Download PDF</a></div>
-                          <p>When do politicians prompt bureaucrats to provide effective services?</p>
-                      </div>
-                  </div>
-              </div>
-
-
-              <h3 class="theme-header">Identity, Gender & Norms</h3>
-              
-              <div class="filter-bar" id="filter-id">
-                  <button class="filter-btn active" onclick="filterGroup('id', 'all', this)">All</button>
-                  <button class="filter-btn" onclick="filterGroup('id', 'pak', this)">Pakistan</button>
-                  <button class="filter-btn" onclick="filterGroup('id', 'global', this)">Global</button>
-              </div>
-
-              <div id="list-id">
-                  <div class="paper-item tag-pak">
+                  <div class="paper-item theme-id region-pak">
                       <div class="paper-title">Political Identity: Experimental Evidence on Anti-Americanism in Pakistan (2020)</div>
                       <div class="paper-journal">Journal of the European Economic Association</div>
                       <div class="paper-authors">With Leonardo Bursztyn et al.</div>
-                      <div class="expand-trigger" data-bs-toggle="collapse" data-bs-target="#id1">Abstract & PDF <i class="fas fa-caret-down"></i></div>
-                      <div class="collapse abstract-box" id="id1">
+                      <div class="expand-trigger" data-bs-toggle="collapse" data-bs-target="#p2">Abstract & PDF <i class="fas fa-caret-down"></i></div>
+                      <div class="collapse abstract-box" id="p2">
                           <div class="mb-2"><a href="#" class="btn-download"><i class="far fa-file-pdf"></i> Download PDF</a></div>
                           <p>We identify Pakistani men's willingness to pay to preserve their anti-American identity.</p>
                       </div>
                   </div>
 
-                  <div class="paper-item tag-global">
-                      <div class="paper-title">Random Acts of Kindness? How Gender Shapes Helping Behaviors Around the World</div>
-                      <div class="paper-journal">Working Paper</div>
-                      <div class="paper-authors">With Salma Mousa.</div>
-                      <div class="expand-trigger" data-bs-toggle="collapse" data-bs-target="#id2">Abstract & PDF <i class="fas fa-caret-down"></i></div>
-                      <div class="collapse abstract-box" id="id2">
+                  <div class="paper-item theme-meth region-global">
+                      <div class="paper-title">Inaccurate Forecasting of a Randomized Controlled Trial (2024)</div>
+                      <div class="paper-journal">Journal of Experimental Political Science</div>
+                      <div class="paper-authors">With Mats Ahrehshop, Miriam Golden, and Luke Sonnet.</div>
+                      <div class="expand-trigger" data-bs-toggle="collapse" data-bs-target="#p13">Abstract & PDF <i class="fas fa-caret-down"></i></div>
+                      <div class="collapse abstract-box" id="p13">
                           <div class="mb-2"><a href="#" class="btn-download"><i class="far fa-file-pdf"></i> Download PDF</a></div>
-                          <p>Study using data from 25,000 pedestrians worldwide.</p>
+                          <p>Results of a forecasting experiment about a randomized controlled trial.</p>
                       </div>
                   </div>
-              </div>
 
+              </div> </div>
 
-              <h3 class="theme-header">Methodology</h3>
-              <div class="paper-item">
-                  <div class="paper-title">Inaccurate Forecasting of a Randomized Controlled Trial (2024)</div>
-                  <div class="paper-journal">Journal of Experimental Political Science</div>
-                  <div class="paper-authors">With Mats Ahrehshop, Miriam Golden, and Luke Sonnet.</div>
-                  <div class="expand-trigger" data-bs-toggle="collapse" data-bs-target="#meth1">Abstract & PDF <i class="fas fa-caret-down"></i></div>
-                  <div class="collapse abstract-box" id="meth1">
-                      <div class="mb-2"><a href="#" class="btn-download"><i class="far fa-file-pdf"></i> Download PDF</a></div>
-                      <p>We report results of a forecasting experiment.</p>
-                  </div>
-              </div>
-
-            </div> <div class="tab-pane fade" id="teaching" role="tabpanel">
-               <div class="mt-4">
-                  <h3>University of Notre Dame</h3>
-                  <ul class="fa-ul">
-                      <li><span class="fa-li"><i class="fa-solid fa-book-open"></i></span><strong>Political Economy of Development</strong> (Undergraduate)</li>
-                      <li><span class="fa-li"><i class="fa-solid fa-graduation-cap"></i></span><strong>Comparative Politics Field Seminar</strong> (Ph.D.)</li>
-                  </ul>
-               </div>
-            </div>
-
-            <div class="tab-pane fade" id="expert" role="tabpanel">
-               <div class="mt-4"><h3>Policy Engagement</h3><p>Research Advisor to Punjab Revenue Authority.</p></div>
-            </div>
-
-            <div class="tab-pane fade" id="podcasts" role="tabpanel">
-               <div class="mt-4"><h3>Media</h3><p>Nature Podcast on Crop Burning.</p></div>
-            </div>
+            <div class="tab-pane fade" id="teaching" role="tabpanel"><div class="mt-4"><h3>Teaching Content</h3></div></div>
+            <div class="tab-pane fade" id="expert" role="tabpanel"><div class="mt-4"><h3>Expert Work</h3></div></div>
+            <div class="tab-pane fade" id="podcasts" role="tabpanel"><div class="mt-4"><h3>Podcasts</h3></div></div>
 
           </div>
         </div>
@@ -440,26 +272,43 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-      function filterGroup(listID, tag, btn) {
-          // 1. Highlight button
-          let container = document.getElementById('filter-' + listID);
-          let buttons = container.querySelectorAll('.filter-btn');
-          buttons.forEach(b => b.classList.remove('active'));
-          btn.classList.add('active');
+      let currentTheme = 'all';
+      let currentRegion = 'all';
 
-          // 2. Filter items
-          let listDiv = document.getElementById('list-' + listID);
-          let items = listDiv.querySelectorAll('.paper-item');
+      function setTheme(theme, btn) {
+          currentTheme = theme;
+          
+          // Update Buttons
+          document.querySelectorAll('.theme-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          
+          filterItems();
+      }
+
+      function setRegion(region, btn) {
+          currentRegion = region;
+          
+          // Update Buttons
+          document.querySelectorAll('.region-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          
+          filterItems();
+      }
+
+      function filterItems() {
+          let items = document.querySelectorAll('.paper-item');
           
           items.forEach(item => {
-              if (tag === 'all') {
+              // Check Theme
+              let themeMatch = (currentTheme === 'all') || item.classList.contains('theme-' + currentTheme);
+              
+              // Check Region
+              let regionMatch = (currentRegion === 'all') || item.classList.contains('region-' + currentRegion);
+              
+              if (themeMatch && regionMatch) {
                   item.style.display = 'block';
               } else {
-                  if (item.classList.contains('tag-' + tag)) {
-                      item.style.display = 'block';
-                  } else {
-                      item.style.display = 'none';
-                  }
+                  item.style.display = 'none';
               }
           });
       }
