@@ -169,7 +169,6 @@
             <li class="nav-item"><a class="nav-link active" id="research-tab" data-bs-toggle="tab" href="#research" role="tab">Research</a></li>
             <li class="nav-item"><a class="nav-link" id="expert-tab" data-bs-toggle="tab" href="#expert" role="tab">Expert Work</a></li>
             <li class="nav-item"><a class="nav-link" id="teaching-tab" data-bs-toggle="tab" href="#teaching" role="tab">Teaching</a></li>
-            <li class="nav-item"><a class="nav-link" id="podcasts-tab" data-bs-toggle="tab" href="#podcasts" role="tab">Podcasts</a></li>
           </ul>
 
           <div class="tab-content" id="nav-tabContent">
@@ -572,10 +571,6 @@
                <div class="mt-4"><h3>Policy Engagement</h3><p>Research Advisor to Punjab Revenue Authority.</p></div>
             </div>
 
-            <div class="tab-pane fade" id="podcasts" role="tabpanel">
-               <div class="mt-4"><h3>Media</h3><div class="podcast-card"><div class="play-btn"><i class="fa-regular fa-circle-play"></i></div><div><h5 class="mb-1"><strong>Nature Podcast</strong></h5><p class="mb-0 text-muted">Crop Burning in South Asia</p><a href="https://www.nature.com" class="small text-primary stretched-link">Listen</a></div></div></div>
-            </div>
-
           </div>
         </div>
       </div>
@@ -619,7 +614,13 @@
               let themeMatch = (currentTheme === 'all') || item.classList.contains('theme-' + currentTheme);
               
               // Check Region
-              let regionMatch = (currentRegion === 'all') || item.classList.contains('region-' + currentRegion);
+              let regionMatch = (currentRegion === 'all');
+              if (!regionMatch) {
+                  // If region is specific, we check tags
+                  if (item.classList.contains('region-' + currentRegion)) {
+                      regionMatch = true;
+                  }
+              }
               
               if (themeMatch && regionMatch) {
                   item.style.display = 'block';
