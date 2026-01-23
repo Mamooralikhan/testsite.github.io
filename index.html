@@ -61,15 +61,16 @@
       }
       
       .designation-pipe {
-          width: 1px;       /* Thin line */
-          background-color: #c99700; /* Gold */
-          margin: 0 25px;   /* More space around the line */
-          height: 60px;     /* Taller height to create the "long line" look */
+          width: 1px;
+          background-color: #c99700;
+          margin: 0 12px;   /* Reduced from 25px to tighten space */
+          height: 60px;
       }
       
       .designation-right {
           display: flex;
           flex-direction: column; 
+          white-space: nowrap; /* Forces text to stay on one line */
       }
 
       /* UNIVERSITY LINK */
