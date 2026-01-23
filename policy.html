@@ -73,9 +73,10 @@
           background: #fff;
           border: 1px solid #f0f0f0;
           border-radius: 4px;
-          margin-bottom: 20px;
+          margin-bottom: 25px;
           transition: all 0.3s ease;
           overflow: hidden;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.03);
       }
       .policy-card:hover {
           transform: translateY(-3px);
@@ -83,8 +84,8 @@
           border-color: #c99700;
       }
       .policy-logo-col {
-          width: 140px;
-          background-color: #f9f9f9;
+          width: 160px;
+          background-color: #fff;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -92,19 +93,23 @@
           padding: 20px;
           flex-shrink: 0;
       }
-      .inst-logo {
-          font-family: 'Playfair Display', serif;
-          font-weight: 700;
-          color: #002b5c;
-          text-align: center;
-          line-height: 1.2;
-          font-size: 1.1em;
+      .inst-logo-img {
+          max-width: 100%;
+          height: auto;
+          display: block;
+          /* Mix blend mode helps logos blend if they have white backgrounds */
+          mix-blend-mode: multiply; 
       }
       .policy-content-col { padding: 25px; flex-grow: 1; }
+      
       .policy-type-tag { font-size: 0.75em; text-transform: uppercase; letter-spacing: 1px; color: #c99700; font-weight: 700; margin-bottom: 8px; display: block; }
-      .policy-title { font-family: 'Playfair Display', serif; font-size: 1.3em; color: #222; margin-bottom: 10px; line-height: 1.2; }
-      .policy-desc { font-size: 0.95em; color: #555; margin-bottom: 15px; }
-      .materials-footer a { font-size: 0.9em; font-weight: 600; color: #00457c; }
+      .policy-title { font-family: 'Playfair Display', serif; font-size: 1.3em; color: #222; margin-bottom: 8px; line-height: 1.2; font-weight: 600; }
+      .policy-meta { font-size: 0.9em; color: #666; margin-bottom: 12px; font-style: italic; }
+      .policy-desc { font-size: 0.95em; color: #444; margin-bottom: 15px; }
+      
+      .materials-footer { margin-top: 10px; padding-top: 10px; border-top: 1px solid #f4f4f4; }
+      .materials-footer a { font-size: 0.85em; font-weight: 600; color: #00457c; text-transform: uppercase; letter-spacing: 0.5px; }
+      .materials-footer a:hover { color: #c99700; }
 
       /* GOLD FILTER BUTTONS */
       .pol-filter-row { display: flex; justify-content: center; gap: 15px; margin-bottom: 40px; }
@@ -175,44 +180,138 @@
 
               <div id="policy-list">
 
+                  <div class="policy-card cat-paper">
+                      <div class="policy-logo-col">
+                          <img src="https://placehold.co/150x150/f9f9f9/002b5c?text=LJE\nJournal" class="inst-logo-img" alt="Lahore Journal of Economics">
+                      </div>
+                      <div class="policy-content-col">
+                          <span class="policy-type-tag">Paper</span>
+                          <h3 class="policy-title">Improving Public Health Delivery in Punjab, Pakistan: Issues and Opportunities</h3>
+                          <div class="policy-meta">
+                              With Michael Callen, Ali Hasanain, Abdul Rehman Khan, Yasir Khan and Muhammad Zia Mehmood.<br>
+                              Lahore Journal of Economics 18:SE (September 2013): pp.249-269
+                          </div>
+                          <div class="materials-footer">
+                              <a href="#"><i class="far fa-file-pdf"></i> Download PDF</a>
+                          </div>
+                      </div>
+                  </div>
+
                   <div class="policy-card cat-report">
                       <div class="policy-logo-col">
-                          <div class="inst-logo">UNDP</div>
+                          <img src="https://placehold.co/150x150/f9f9f9/002b5c?text=World\nBank" class="inst-logo-img" alt="World Bank">
                       </div>
                       <div class="policy-content-col">
                           <span class="policy-type-tag">Report</span>
-                          <h3 class="policy-title">Development Framework for South Punjab</h3>
-                          <p class="policy-desc">A comprehensive analysis of infrastructure and social development needs in the South Punjab region.</p>
+                          <h3 class="policy-title">Background report on Representation and Environment</h3>
+                          <div class="policy-meta">
+                              (2024) World Bank. With Kathryn Baragwanath.
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="policy-card cat-report">
+                      <div class="policy-logo-col">
+                          <img src="https://placehold.co/150x150/f9f9f9/002b5c?text=USAID" class="inst-logo-img" alt="USAID">
+                      </div>
+                      <div class="policy-content-col">
+                          <span class="policy-type-tag">Report</span>
+                          <h3 class="policy-title">What Works for Women’s Political Participation and Leadership</h3>
+                          <div class="policy-meta">
+                              (2022) USAID. With Soledad Prillaman.
+                          </div>
                           <div class="materials-footer">
-                              <a href="#"><i class="far fa-file-pdf"></i> Download Report</a>
+                              <a href="#"><i class="fas fa-link"></i> View Link</a>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="policy-card cat-report">
+                      <div class="policy-logo-col">
+                          <img src="https://placehold.co/150x150/f9f9f9/002b5c?text=3ie" class="inst-logo-img" alt="3ie">
+                      </div>
+                      <div class="policy-content-col">
+                          <span class="policy-type-tag">Report</span>
+                          <h3 class="policy-title">Promoting Political Competition Through Electoral Processes in Low- and Middle-Income Countries: An Evidence Gap Map</h3>
+                          <div class="policy-meta">
+                              (2022) International Initiative for Impact Evaluation (3ie). With Parraro et al.
+                          </div>
+                          <div class="materials-footer">
+                              <a href="#"><i class="far fa-file-pdf"></i> Download PDF</a>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="policy-card cat-report">
+                      <div class="policy-logo-col">
+                          <img src="https://placehold.co/150x150/f9f9f9/002b5c?text=Alif\nAilaan" class="inst-logo-img" alt="Alif Ailaan">
+                      </div>
+                      <div class="policy-content-col">
+                          <span class="policy-type-tag">Report</span>
+                          <h3 class="policy-title">A Different Approach to Education Data: Teacher Attendance in Gujranwala and Narowal</h3>
+                          <div class="policy-meta">
+                              (2016) Alif Ailaan. With Arqam Lodhi and Sameea Sheikh.
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="policy-card cat-report">
+                      <div class="policy-logo-col">
+                          <img src="https://placehold.co/150x150/f9f9f9/002b5c?text=Govt\nPunjab" class="inst-logo-img" alt="Punjab Government">
+                      </div>
+                      <div class="policy-content-col">
+                          <span class="policy-type-tag">Report</span>
+                          <h3 class="policy-title">Baseline Report on the Punjab Economic Opportunities Program</h3>
+                          <div class="policy-meta">
+                              (2012) With Imran Rasul, Adnan Qadir Khan, Shaiza Qayyum, David Hollywood, Sahaab Sheikh, Hafsa Iqbal, Sameem Siddiqui, Arqam A Lodhi.
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="policy-card cat-report">
+                      <div class="policy-logo-col">
+                          <img src="https://placehold.co/150x150/f9f9f9/002b5c?text=IGC" class="inst-logo-img" alt="IGC">
+                      </div>
+                      <div class="policy-content-col">
+                          <span class="policy-type-tag">Report</span>
+                          <h3 class="policy-title">Pakistan’s Trade Policies: Future Directions</h3>
+                          <div class="policy-meta">
+                              IGC Working Paper (2011). With Ashraf Khan and Garry Purcell (ANU).
+                          </div>
+                          <div class="materials-footer">
+                              <a href="#"><i class="far fa-file-pdf"></i> Download PDF</a>
                           </div>
                       </div>
                   </div>
 
                   <div class="policy-card cat-brief">
                       <div class="policy-logo-col">
-                          <div class="inst-logo">IGC</div>
+                          <img src="https://placehold.co/150x150/f9f9f9/002b5c?text=Princeton\nESOC" class="inst-logo-img" alt="Princeton">
                       </div>
                       <div class="policy-content-col">
                           <span class="policy-type-tag">Policy Brief</span>
-                          <h3 class="policy-title">Improving Tax Collection through Digital Monitoring</h3>
-                          <p class="policy-desc">Evidence from a randomized control trial on the efficacy of digital monitoring tools for tax inspectors.</p>
+                          <h3 class="policy-title">Political Violence in Pakistan 1988-2010: Myths vs Realities</h3>
+                          <div class="policy-meta">
+                              With Jacob Shapiro (Princeton).
+                          </div>
                           <div class="materials-footer">
-                              <a href="#"><i class="fas fa-link"></i> View at IGC</a>
+                              <a href="#"><i class="far fa-file-pdf"></i> Download PDF</a>
                           </div>
                       </div>
                   </div>
 
-                  <div class="policy-card cat-paper">
+                  <div class="policy-card cat-brief">
                       <div class="policy-logo-col">
-                          <div class="inst-logo">Govt of<br>Punjab</div>
+                          <img src="https://placehold.co/150x150/f9f9f9/002b5c?text=IGC" class="inst-logo-img" alt="IGC">
                       </div>
                       <div class="policy-content-col">
-                          <span class="policy-type-tag">Paper</span>
-                          <h3 class="policy-title">Punjab Education Sector Reform Strategy</h3>
-                          <p class="policy-desc">Strategic roadmap for the implementation of student-centric education reforms across the province.</p>
+                          <span class="policy-type-tag">Policy Brief</span>
+                          <h3 class="policy-title">Education Policy in Pakistan: a Framework for Reform</h3>
+                          <div class="policy-meta">
+                              For Tahir Andrabi (Pomona), Jishnu Das (World Bank) and Asim Khwaja (Harvard).
+                          </div>
                           <div class="materials-footer">
-                              <a href="#"><i class="far fa-file-pdf"></i> Read Full Paper</a>
+                              <a href="#"><i class="far fa-file-pdf"></i> Download PDF</a>
                           </div>
                       </div>
                   </div>
@@ -224,6 +323,7 @@
       </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
       let currentPolicyCat = 'all';
 
