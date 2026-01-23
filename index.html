@@ -52,26 +52,37 @@
       /* NEW FLEX LAYOUT FOR DESIGNATION */
       .designation-container {
           display: flex;
-          align-items: center; /* This vertically centers "Associate Professor" */
+          align-items: center; 
           font-family: 'Playfair Display', serif;
           font-size: 1.1em;
           color: #555;
           margin-bottom: 5px;
-          line-height: 1.3;
+          line-height: 1.4;
       }
       
       .designation-pipe {
-          color: #c99700; /* Gold Color */
-          font-weight: 300;
-          font-size: 1.3em;
-          margin: 0 15px; /* Spacing around the pipe */
-          height: 100%;
+          width: 1px;       /* Thin line */
+          background-color: #c99700; /* Gold */
+          margin: 0 25px;   /* More space around the line */
+          height: 60px;     /* Taller height to create the "long line" look */
       }
       
       .designation-right {
           display: flex;
-          flex-direction: column; /* Stacks the departments vertically */
+          flex-direction: column; 
       }
+
+      /* UNIVERSITY LINK */
+      .univ-link {
+          display: block;
+          font-family: 'Playfair Display', serif;
+          font-size: 1.1em;
+          color: #002b5c;
+          margin-bottom: 20px;
+          text-decoration: none;
+          font-weight: 400;
+      }
+      .univ-link:hover { text-decoration: underline; color: #c99700; }
 
       /* UNIVERSITY LINK */
       .univ-link {
@@ -239,8 +250,7 @@
                     
                     <div class="designation-container">
                         <div>Associate Professor</div>
-                        <div class="designation-pipe">|</div>
-                        <div class="designation-right">
+                        <div class="designation-pipe"></div> <div class="designation-right">
                             <div>Political Science & Global Affairs</div>
                             <div>Economics (Concurrent)</div>
                         </div>
@@ -250,7 +260,6 @@
                     
                     <div class="icon-row">
                         <a href="https://www.dropbox.com/s/llr8e84hqq7j7yv/Saad%20Gulzar_CV.pdf?raw=1"><i class="fas fa-file-alt"></i> CV</a>
-                        <a href="https://github.com/saadgulzar"><i class="fa-brands fa-github"></i> GitHub</a>
                         <a href="https://scholar.google.com/citations?user=EDq5FvQAAAAJ&hl=en"><i class="ai ai-google-scholar ai-lg"></i> Scholar</a>
                         <a href="mailto:sgulzar@nd.edu"><i class="fa-solid fa-envelope"></i> Email</a>
                     </div>
