@@ -78,10 +78,15 @@
       }
       
       .univ-logo {
-          width: 55px; 
+          width: 60px; /* Standard University Logo Size */
           height: auto;
           margin-right: 20px;
-          opacity: 0.9;
+          opacity: 0.95;
+      }
+
+      /* Specific adjustment for World Bank Logo to be wider */
+      .univ-logo.wide-logo {
+          width: 140px; 
       }
 
       .univ-text-container {
@@ -96,7 +101,7 @@
 
       /* Horizontal Course Item */
       .course-item { 
-          display: flex; /* Flexbox for horizontal layout */
+          display: flex; 
           margin-bottom: 25px; 
           border-bottom: 1px solid #f9f9f9;
           padding-bottom: 20px;
@@ -105,12 +110,12 @@
 
       /* Left Column (Buttons) */
       .course-left {
-          width: 140px; /* Fixed width */
+          width: 140px; 
           flex-shrink: 0;
           padding-right: 20px;
           display: flex;
           flex-direction: column;
-          gap: 8px; /* Space between multiple buttons */
+          gap: 8px; 
           align-items: flex-start;
           padding-top: 4px; 
       }
@@ -198,7 +203,7 @@
           <div class="tab-content">
             
             <div class="univ-header">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Princeton_seal.svg/150px-Princeton_seal.svg.png" class="univ-logo" alt="Princeton University">
+                <img src="img/princeton.png" class="univ-logo" alt="Princeton University">
                 <div class="univ-text-container">
                     <h2 class="univ-title">Princeton University</h2>
                     <span class="univ-role">Instructor</span>
@@ -242,7 +247,7 @@
 
 
             <div class="univ-header">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Seal_of_Leland_Stanford_Junior_University.svg/240px-Seal_of_Leland_Stanford_Junior_University.svg.png" class="univ-logo" alt="Stanford University">
+                <img src="img/stanford.png" class="univ-logo" alt="Stanford University">
                 <div class="univ-text-container">
                     <h2 class="univ-title">Stanford University</h2>
                     <span class="univ-role">Instructor</span>
@@ -298,7 +303,7 @@
 
 
             <div class="univ-header">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/New_York_University_Seal.svg/200px-New_York_University_Seal.svg.png" class="univ-logo" alt="New York University">
+                <img src="img/nyu.png" class="univ-logo" alt="New York University">
                 <div class="univ-text-container">
                     <h2 class="univ-title">New York University</h2>
                     <span class="univ-role">Teaching Assistant</span>
@@ -349,7 +354,7 @@
             </div>
 
             <div class="univ-header">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/The_World_Bank_logo.svg/500px-The_World_Bank_logo.svg.png" class="univ-logo" style="width: 120px; opacity: 1;" alt="World Bank">
+                <img src="img/worldbank.png" class="univ-logo wide-logo" alt="World Bank">
                 <div class="univ-text-container">
                     <h2 class="univ-title">Prior Experience</h2>
                 </div>
