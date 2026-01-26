@@ -159,27 +159,7 @@
             <h2 class="section-header">Research</h2>
 
             <h3 class="sub-header" style="margin-top:10px;">Published Papers</h3>
-
-            <div class="filter-container">
-                <div class="mb-2">
-                    <span class="filter-label">Theme:</span>
-                    <button class="filter-btn active" onclick="setTheme('all', this)">All</button>
-                    <button class="filter-btn" onclick="setTheme('env', this)">Environment</button>
-                    <button class="filter-btn" onclick="setTheme('elec', this)">Elections</button>
-                    <button class="filter-btn" onclick="setTheme('bur', this)">Bureaucracy</button>
-                    <button class="filter-btn" onclick="setTheme('id', this)">Identity</button>
-                    <button class="filter-btn" onclick="setTheme('meth', this)">Methodology</button>
-                </div>
-                <div>
-                    <span class="filter-label">Region:</span>
-                    <button class="filter-btn active" onclick="setRegion('all', this)">All</button>
-                    <button class="filter-btn" onclick="setRegion('india', this)">India</button>
-                    <button class="filter-btn" onclick="setRegion('pak', this)">Pakistan</button>
-                    <button class="filter-btn" onclick="setRegion('nepal', this)">Nepal</button>
-                    <button class="filter-btn" onclick="setRegion('col', this)">Colombia</button>
-                </div>
-            </div>
-
+            
             <div id="published-list">
 
                 <div class="item-row theme-env region-global">
@@ -382,7 +362,28 @@
                     </div>
                 </div>
 
-            </div> <h3 class="sub-header">Working Papers</h3>
+            </div> <div class="filter-container" style="margin-top: 30px; margin-bottom: 40px; border-top: 1px dotted #ccc; padding-top: 15px;">
+                <div style="font-size:12px; color:#555; margin-bottom:10px; font-style:italic;">Filter the list above:</div>
+                <div class="mb-2">
+                    <span class="filter-label">Theme:</span>
+                    <button class="filter-btn active" onclick="setTheme('all', this)">All</button>
+                    <button class="filter-btn" onclick="setTheme('env', this)">Environment</button>
+                    <button class="filter-btn" onclick="setTheme('elec', this)">Elections</button>
+                    <button class="filter-btn" onclick="setTheme('bur', this)">Bureaucracy</button>
+                    <button class="filter-btn" onclick="setTheme('id', this)">Identity</button>
+                    <button class="filter-btn" onclick="setTheme('meth', this)">Methodology</button>
+                </div>
+                <div>
+                    <span class="filter-label">Region:</span>
+                    <button class="filter-btn active" onclick="setRegion('all', this)">All</button>
+                    <button class="filter-btn" onclick="setRegion('india', this)">India</button>
+                    <button class="filter-btn" onclick="setRegion('pak', this)">Pakistan</button>
+                    <button class="filter-btn" onclick="setRegion('nepal', this)">Nepal</button>
+                    <button class="filter-btn" onclick="setRegion('col', this)">Colombia</button>
+                </div>
+            </div>
+
+            <h3 class="sub-header">Working Papers</h3>
             <div id="working-list">
                 
                 <div class="item-row">
