@@ -70,58 +70,85 @@
       .nav-link:hover { color: #002b5c; }
       .nav-link.active { color: #002b5c !important; font-weight: 700; border-bottom: 3px solid #c99700; background: none; }
       
-      /* === POLICY CARD STYLES === */
-      .policy-card {
+      /* === COMPACT POLICY LIST STYLES === */
+      .policy-item {
           display: flex;
-          background: #fff;
-          border: 1px solid #f0f0f0;
-          border-radius: 4px;
-          margin-bottom: 25px;
-          transition: all 0.3s ease;
-          overflow: hidden;
-          box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-          align-items: stretch;
+          align-items: flex-start;
+          padding: 15px 0;
+          border-bottom: 1px solid #eee;
+          transition: background-color 0.2s;
       }
-      .policy-card:hover {
-          transform: translateY(-3px);
-          box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-          border-color: #c99700;
+      .policy-item:hover {
+          background-color: #fafafa;
       }
-      .policy-logo-col {
-          width: 150px;
-          background-color: #fff;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          border-right: 1px solid #eee;
-          padding: 15px;
+      
+      /* Logo Column */
+      .policy-logo-container {
+          width: 80px; /* Fixed, narrow width for logo */
           flex-shrink: 0;
+          margin-right: 20px;
+          display: flex;
+          justify-content: center;
+          align-items: flex-start; /* Align logo to top of text */
+          padding-top: 5px;
       }
+      
       .inst-logo-img {
           max-width: 100%;
-          max-height: 80px;
+          max-height: 60px; /* Restrict height to avoid big boxes */
           width: auto;
           display: block;
+          mix-blend-mode: multiply; /* Blends white backgrounds */
       }
-      .policy-content-col { padding: 20px 25px; flex-grow: 1; display: flex; flex-direction: column; justify-content: center; }
+
+      /* Content Column */
+      .policy-content {
+          flex-grow: 1;
+      }
+
+      .policy-type-tag {
+          font-size: 0.7em;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          color: #c99700;
+          font-weight: 700;
+          margin-bottom: 4px;
+          display: block;
+      }
+
+      .policy-title {
+          font-family: 'Playfair Display', serif;
+          font-size: 1.15em;
+          color: #222;
+          margin-bottom: 4px;
+          line-height: 1.2;
+          font-weight: 600;
+      }
+
+      .policy-meta {
+          font-size: 0.9em;
+          color: #555;
+          line-height: 1.4;
+      }
       
-      .policy-type-tag { font-size: 0.75em; text-transform: uppercase; letter-spacing: 1px; color: #c99700; font-weight: 700; margin-bottom: 6px; display: block; }
-      .policy-title { font-family: 'Playfair Display', serif; font-size: 1.25em; color: #222; margin-bottom: 8px; line-height: 1.3; font-weight: 600; }
-      .policy-meta { font-size: 0.95em; color: #555; margin-bottom: 10px; line-height: 1.5; }
-      .materials-footer { margin-top: auto; padding-top: 10px; }
-      .materials-footer a { font-size: 0.85em; font-weight: 600; color: #00457c; text-transform: uppercase; letter-spacing: 0.5px; text-decoration: none; border: 1px solid #eee; padding: 4px 10px; border-radius: 3px; display: inline-block;}
-      .materials-footer a:hover { background-color: #002b5c; color: #fff; border-color: #002b5c; }
+      .materials-link {
+          font-size: 0.85em;
+          font-weight: 600;
+          color: #00457c;
+          margin-left: 8px;
+          white-space: nowrap;
+      }
+      .materials-link:hover { text-decoration: underline; color: #c99700; }
 
       /* GOLD FILTER BUTTONS */
-      .pol-filter-row { display: flex; justify-content: center; gap: 15px; margin-bottom: 40px; flex-wrap: wrap; }
+      .pol-filter-row { display: flex; justify-content: center; gap: 10px; margin-bottom: 30px; flex-wrap: wrap; }
       .pol-btn {
-          flex: 1; max-width: 200px;
           border: 1px solid #c99700; color: #c99700; background: #fff;
-          padding: 12px 0; text-transform: uppercase; font-size: 0.85em; font-weight: 600; letter-spacing: 1px;
-          border-radius: 2px; transition: all 0.2s; cursor: pointer; min-width: 140px;
+          padding: 8px 20px; text-transform: uppercase; font-size: 0.8em; font-weight: 600; letter-spacing: 1px;
+          border-radius: 2px; transition: all 0.2s; cursor: pointer; min-width: 120px;
       }
       .pol-btn:hover { background-color: #fffbf0; }
-      .pol-btn.active { background-color: #c99700; color: #fff; box-shadow: 0 4px 10px rgba(201, 151, 0, 0.3); }
+      .pol-btn.active { background-color: #c99700; color: #fff; box-shadow: 0 2px 5px rgba(201, 151, 0, 0.3); }
     </style>
   </head>
   
@@ -181,138 +208,126 @@
 
               <div id="policy-list">
 
-                  <div class="policy-card cat-paper">
-                      <div class="policy-logo-col">
-                          <img src="https://placehold.co/200x120/ffffff/002b5c?text=LJE" class="inst-logo-img" alt="Lahore Journal of Economics">
+                  <div class="policy-item cat-paper">
+                      <div class="policy-logo-container">
+                          <img src="https://placehold.co/100x100/ffffff/002b5c?text=LJE" class="inst-logo-img" alt="LJE">
                       </div>
-                      <div class="policy-content-col">
+                      <div class="policy-content">
                           <span class="policy-type-tag">Paper</span>
-                          <h3 class="policy-title">Improving Public Health Delivery in Punjab, Pakistan: Issues and Opportunities</h3>
+                          <div class="policy-title">Improving Public Health Delivery in Punjab, Pakistan: Issues and Opportunities</div>
                           <div class="policy-meta">
-                              With Michael Callen, Ali Hasanain, Abdul Rehman Khan, Yasir Khan and Muhammad Zia Mehmood.<br>
-                              Lahore Journal of Economics 18:SE (September 2013): pp.249-269
-                          </div>
-                          <div class="materials-footer">
-                              <a href="#"><i class="far fa-file-pdf"></i> Download PDF</a>
+                              With Michael Callen, Ali Hasanain, Abdul Rehman Khan, Yasir Khan and Muhammad Zia Mehmood. 
+                              <em>Lahore Journal of Economics 18:SE</em> (September 2013): pp.249-269.
+                              <a href="#" class="materials-link"><i class="far fa-file-pdf"></i> PDF</a>
                           </div>
                       </div>
                   </div>
 
-                  <div class="policy-card cat-report">
-                      <div class="policy-logo-col">
-                          <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/The_World_Bank_logo.svg" class="inst-logo-img" alt="World Bank">
+                  <div class="policy-item cat-report">
+                      <div class="policy-logo-container">
+                          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/The_World_Bank_logo.svg/200px-The_World_Bank_logo.svg.png" class="inst-logo-img" alt="World Bank">
                       </div>
-                      <div class="policy-content-col">
+                      <div class="policy-content">
                           <span class="policy-type-tag">Report</span>
-                          <h3 class="policy-title">Background report on Representation and Environment</h3>
+                          <div class="policy-title">Background report on Representation and Environment</div>
                           <div class="policy-meta">
                               (2024) World Bank. With Kathryn Baragwanath.
                           </div>
                       </div>
                   </div>
 
-                  <div class="policy-card cat-report">
-                      <div class="policy-logo-col">
-                          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/USAID-Identity.svg/2560px-USAID-Identity.svg.png" class="inst-logo-img" alt="USAID">
+                  <div class="policy-item cat-report">
+                      <div class="policy-logo-container">
+                          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/USAID-Identity.svg/500px-USAID-Identity.svg.png" class="inst-logo-img" alt="USAID">
                       </div>
-                      <div class="policy-content-col">
+                      <div class="policy-content">
                           <span class="policy-type-tag">Report</span>
-                          <h3 class="policy-title">What Works for Women’s Political Participation and Leadership</h3>
+                          <div class="policy-title">What Works for Women’s Political Participation and Leadership</div>
                           <div class="policy-meta">
                               (2022) USAID. With Soledad Prillaman.
-                          </div>
-                          <div class="materials-footer">
-                              <a href="#"><i class="fas fa-link"></i> View Link</a>
+                              <a href="#" class="materials-link"><i class="fas fa-link"></i> Link</a>
                           </div>
                       </div>
                   </div>
 
-                  <div class="policy-card cat-report">
-                      <div class="policy-logo-col">
-                          <img src="https://placehold.co/200x120/ffffff/ba0c2f?text=3ie" class="inst-logo-img" alt="3ie">
+                  <div class="policy-item cat-report">
+                      <div class="policy-logo-container">
+                          <img src="https://placehold.co/100x100/ffffff/ba0c2f?text=3ie" class="inst-logo-img" alt="3ie">
                       </div>
-                      <div class="policy-content-col">
+                      <div class="policy-content">
                           <span class="policy-type-tag">Report</span>
-                          <h3 class="policy-title">Promoting Political Competition Through Electoral Processes in Low- and Middle-Income Countries: An Evidence Gap Map</h3>
+                          <div class="policy-title">Promoting Political Competition Through Electoral Processes in Low- and Middle-Income Countries: An Evidence Gap Map</div>
                           <div class="policy-meta">
                               (2022) International Initiative for Impact Evaluation (3ie). With Parraro et al.
-                          </div>
-                          <div class="materials-footer">
-                              <a href="#"><i class="far fa-file-pdf"></i> Download PDF</a>
+                              <a href="#" class="materials-link"><i class="far fa-file-pdf"></i> PDF</a>
                           </div>
                       </div>
                   </div>
 
-                  <div class="policy-card cat-report">
-                      <div class="policy-logo-col">
-                          <img src="https://placehold.co/200x120/ffffff/333333?text=Alif+Ailaan" class="inst-logo-img" alt="Alif Ailaan">
+                  <div class="policy-item cat-report">
+                      <div class="policy-logo-container">
+                          <img src="https://placehold.co/100x100/ffffff/333333?text=Alif+Ailaan" class="inst-logo-img" alt="Alif Ailaan">
                       </div>
-                      <div class="policy-content-col">
+                      <div class="policy-content">
                           <span class="policy-type-tag">Report</span>
-                          <h3 class="policy-title">A Different Approach to Education Data: Teacher Attendance in Gujranwala and Narowal</h3>
+                          <div class="policy-title">A Different Approach to Education Data: Teacher Attendance in Gujranwala and Narowal</div>
                           <div class="policy-meta">
                               (2016) Alif Ailaan. With Arqam Lodhi and Sameea Sheikh.
                           </div>
                       </div>
                   </div>
 
-                  <div class="policy-card cat-report">
-                      <div class="policy-logo-col">
-                          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Government_of_Punjab%2C_Pakistan_logo.svg/200px-Government_of_Punjab%2C_Pakistan_logo.svg.png" class="inst-logo-img" alt="Government of Punjab">
+                  <div class="policy-item cat-report">
+                      <div class="policy-logo-container">
+                          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Government_of_Punjab%2C_Pakistan_logo.svg/200px-Government_of_Punjab%2C_Pakistan_logo.svg.png" class="inst-logo-img" alt="Govt Punjab">
                       </div>
-                      <div class="policy-content-col">
+                      <div class="policy-content">
                           <span class="policy-type-tag">Report</span>
-                          <h3 class="policy-title">Baseline Report on the Punjab Economic Opportunities Program</h3>
+                          <div class="policy-title">Baseline Report on the Punjab Economic Opportunities Program</div>
                           <div class="policy-meta">
                               (2012) With Imran Rasul, Adnan Qadir Khan, Shaiza Qayyum, David Hollywood, Sahaab Sheikh, Hafsa Iqbal, Sameem Siddiqui, Arqam A Lodhi.
                           </div>
                       </div>
                   </div>
 
-                  <div class="policy-card cat-report">
-                      <div class="policy-logo-col">
-                          <img src="https://placehold.co/200x120/ffffff/5e2a84?text=IGC" class="inst-logo-img" alt="IGC">
+                  <div class="policy-item cat-report">
+                      <div class="policy-logo-container">
+                          <img src="https://placehold.co/100x100/ffffff/5e2a84?text=IGC" class="inst-logo-img" alt="IGC">
                       </div>
-                      <div class="policy-content-col">
+                      <div class="policy-content">
                           <span class="policy-type-tag">Report</span>
-                          <h3 class="policy-title">Pakistan’s Trade Policies: Future Directions</h3>
+                          <div class="policy-title">Pakistan’s Trade Policies: Future Directions</div>
                           <div class="policy-meta">
                               IGC Working Paper (2011). With Ashraf Khan and Garry Purcell (ANU).
-                          </div>
-                          <div class="materials-footer">
-                              <a href="#"><i class="far fa-file-pdf"></i> Download PDF</a>
+                              <a href="#" class="materials-link"><i class="far fa-file-pdf"></i> PDF</a>
                           </div>
                       </div>
                   </div>
 
-                  <div class="policy-card cat-brief">
-                      <div class="policy-logo-col">
-                          <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Princeton_seal.svg" class="inst-logo-img" alt="Princeton University">
+                  <div class="policy-item cat-brief">
+                      <div class="policy-logo-container">
+                          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Princeton_seal.svg/150px-Princeton_seal.svg.png" class="inst-logo-img" alt="Princeton">
                       </div>
-                      <div class="policy-content-col">
+                      <div class="policy-content">
                           <span class="policy-type-tag">Policy Brief</span>
-                          <h3 class="policy-title">Political Violence in Pakistan 1988-2010: Myths vs Realities</h3>
+                          <div class="policy-title">Political Violence in Pakistan 1988-2010: Myths vs Realities</div>
                           <div class="policy-meta">
                               With Jacob Shapiro (Princeton).
-                          </div>
-                          <div class="materials-footer">
-                              <a href="#"><i class="far fa-file-pdf"></i> Download PDF</a>
+                              <a href="#" class="materials-link"><i class="far fa-file-pdf"></i> PDF</a>
                           </div>
                       </div>
                   </div>
 
-                  <div class="policy-card cat-brief">
-                      <div class="policy-logo-col">
-                          <img src="https://placehold.co/200x120/ffffff/5e2a84?text=IGC" class="inst-logo-img" alt="IGC">
+                  <div class="policy-item cat-brief">
+                      <div class="policy-logo-container">
+                          <img src="https://placehold.co/100x100/ffffff/5e2a84?text=IGC" class="inst-logo-img" alt="IGC">
                       </div>
-                      <div class="policy-content-col">
+                      <div class="policy-content">
                           <span class="policy-type-tag">Policy Brief</span>
-                          <h3 class="policy-title">Education Policy in Pakistan: a Framework for Reform</h3>
+                          <div class="policy-title">Education Policy in Pakistan: a Framework for Reform</div>
                           <div class="policy-meta">
                               For Tahir Andrabi (Pomona), Jishnu Das (World Bank) and Asim Khwaja (Harvard).
-                          </div>
-                          <div class="materials-footer">
-                              <a href="#"><i class="far fa-file-pdf"></i> Download PDF</a>
+                              <a href="#" class="materials-link"><i class="far fa-file-pdf"></i> PDF</a>
                           </div>
                       </div>
                   </div>
@@ -342,7 +357,7 @@
       }
 
       function filterPolicyItems() {
-          let items = document.querySelectorAll('.policy-card');
+          let items = document.querySelectorAll('.policy-item');
           items.forEach(item => {
               if (currentPolicyCat === 'all' || item.classList.contains('cat-' + currentPolicyCat)) {
                   item.style.display = 'flex';
